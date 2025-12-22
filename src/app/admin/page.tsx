@@ -84,7 +84,7 @@ export default function AdminPage() {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                 <StatCard
                     title="Contact Enquiries"
                     value="4"
@@ -99,32 +99,10 @@ export default function AdminPage() {
                     colorClass="text-green-600 border-green-100"
                     bgClass="bg-green-50/50"
                 />
-                <StatCard
-                    title="Appointments"
-                    value="0"
-                    icon={Calendar}
-                    colorClass="text-purple-600 border-purple-100"
-                    bgClass="bg-purple-50/50"
-                />
-                <StatCard
-                    title="Products"
-                    value="24"
-                    icon={Package}
-                    colorClass="text-teal-600 border-teal-100"
-                    bgClass="bg-teal-50/50"
-                />
-                <StatCard
-                    title="Product Enquiries"
-                    value="0"
-                    icon={List}
-                    colorClass="text-cyan-600 border-cyan-100"
-                    bgClass="bg-cyan-50/50"
-                />
             </div>
 
             {/* Detailed Management Sections */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
+            <div className="max-w-xl">
                 {/* Enquiry Management */}
                 <ManagementCard
                     title="Enquiry Management"
@@ -141,59 +119,8 @@ export default function AdminPage() {
                             icon: FileText,
                             label: "View Newsletter Subscribers",
                             subLabel: "Manage your mailing list",
-                            href: "/admin/inbox",
+                            href: "/admin/newsletter",
                             color: "green"
-                        },
-                        {
-                            icon: Calendar,
-                            label: "View Appointments",
-                            subLabel: "Manage bookings and schedules",
-                            href: "/admin/appointments",
-                            color: "purple"
-                        }
-                    ]}
-                />
-
-                {/* Product Management */}
-                <ManagementCard
-                    title="Product Management"
-                    description="Manage products and product enquiries"
-                    actions={[
-                        {
-                            icon: ShoppingBag,
-                            label: "Manage Products",
-                            subLabel: "Add, edit, or delete products",
-                            href: "/admin/products",
-                            color: "teal"
-                        },
-                        {
-                            icon: List,
-                            label: "View Product Enquiries",
-                            subLabel: "Manage customer product queries",
-                            href: "/admin/product-enquiries",
-                            color: "cyan"
-                        }
-                    ]}
-                />
-
-                {/* Inventory Management */}
-                <ManagementCard
-                    title="Inventory Management"
-                    description="Manage batches and stock levels"
-                    actions={[
-                        {
-                            icon: Wallet,
-                            label: "View Inventory",
-                            subLabel: "Manage products and batches",
-                            href: "/admin/inventory",
-                            color: "indigo"
-                        },
-                        {
-                            icon: Package,
-                            label: "Add New Inventory",
-                            subLabel: "Create new product batch",
-                            href: "/admin/inventory/new",
-                            color: "violet"
                         }
                     ]}
                 />

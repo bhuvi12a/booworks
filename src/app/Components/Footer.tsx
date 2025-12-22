@@ -159,11 +159,11 @@ export default function Footer() {
                         <div className="pt-4 space-y-3">
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Mail size={16} className="text-primary" />
-                                <span>hello@booworks.com</span>
+                                <a href="mailto:bootech012@gmail.com" className="hover:text-primary transition-colors">bootech012@gmail.com</a>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <MapPin size={16} className="text-primary" />
-                                <span>123 Digital Ave, Tech City, TC 90210</span>
+                                <span> 4/72 Gandhi nagar , Hosur, Zuzuvadi, Krishnagiri District 635126</span>
                             </div>
                         </div>
                     </div>

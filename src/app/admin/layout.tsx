@@ -104,19 +104,7 @@ export default function AdminLayout({
                         <div className="space-y-1">
                             <NavItem href="/admin/inbox" icon={Mail} label="Contact Enquiry" />
                             <NavItem href="/admin/newsletter" icon={FileText} label="Newsletter" />
-                            <NavItem href="/admin/appointments" icon={CalendarDays} label="Appointments" />
-                        </div>
-                    </div>
-
-                    <div className="space-y-3">
-                        <div className="px-4 text-[11px] font-bold text-muted-foreground/70 uppercase tracking-widest">
-                            Content Management
-                        </div>
-                        <div className="space-y-1">
-                            <NavItem href="/admin/services" icon={Briefcase} label="Services" />
-                            <NavItem href="/admin/clients" icon={Users} label="Clients" />
-                            <NavItem href="/admin/products" icon={ShoppingBag} label="Products" />
-                            <NavItem href="/admin/inventory" icon={Package} label="Inventory" />
+                            <NavItem href="/admin/bookings" icon={CalendarDays} label="Strategy Calls" />
                         </div>
                     </div>
                 </nav>

@@ -7,15 +7,16 @@ import { renderCanvas } from "./ui/canvas"
 import { DIcons } from "dicons";
 
 import { Button } from "./ui/button";
+import { BookingModal } from "./BookingModal";
 
 export function Hero() {
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
     useEffect(() => {
         renderCanvas();
 
-        // Check for saved theme preference or default to 'light'
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'light';
+        // Check for saved theme preference or default to 'dark'
+        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
         setTheme(savedTheme);
         document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     }, []);
@@ -27,8 +28,12 @@ export function Hero() {
         document.documentElement.classList.toggle('dark', newTheme === 'dark');
     }, [theme]);
 
+    const [isBookingOpen, setIsBookingOpen] = useState(false);
+
     return (
         <section id="home" className="relative">
+            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+
             {/* Theme Toggle Button */}
             <div className="absolute right-4 top-4 z-50 md:right-8 md:top-8">
                 <button
@@ -85,11 +90,13 @@ export function Hero() {
                                 Start Campaign
                             </Button>
                         </Link>
-                        <Link href={"https://cal.com/aliimam/designali"} target="_blank">
-                            <Button variant="outline" size="lg">
-                                Book a Strategy Call
-                            </Button>
-                        </Link>
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            onClick={() => setIsBookingOpen(true)}
+                        >
+                            Book a Strategy Call
+                        </Button>
                     </div>
                 </div>
             </div>

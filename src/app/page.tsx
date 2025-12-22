@@ -13,17 +13,17 @@ export default function Home() {
     { name: 'Home', url: '#', icon: HomeIcon },
     { name: 'Services', url: '#services', icon: Briefcase },
     { name: 'About', url: '#about', icon: User },
-    { name: 'Contact', url: '#contact', icon: Mail }
+    { name: 'Contact', url: '/contact', icon: Mail }
   ];
 
   return (
     <>
-      <Navbar items={navItems} />
+      {/* Navbar handled in Global Layout */}
       <Hero />
       <Clients />
       <Services />
       <Testimonials />
-      <Footer />
+      {/* Footer handled in Global Layout */}
     </>
   );
 }
