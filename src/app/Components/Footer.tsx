@@ -53,7 +53,7 @@ const footerLinks = {
         { name: "Digital Marketing", href: "#" },
         { name: "Content Strategy", href: "#" },
         { name: "Social Media", href: "#" },
-        { name: "Web Development", href: "#" },
+        { name: "Web Designing", href: "#" },
     ],
     company: [
         { name: "About Us", href: "#" },
