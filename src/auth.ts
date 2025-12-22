@@ -20,6 +20,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 if (parsedCredentials.success) {
                     const { email, password } = parsedCredentials.data
 
+                    // HARDCODED ADMIN FALLBACK (For Development/Demo)
+                    if (email === "admin@booworks.com" && password === "admin123") {
+                        return {
+                            id: "admin-fallback-id",
+                            name: "Admin User",
+                            email: "admin@booworks.com",
+                            role: "admin",
+                        }
+                    }
+
                     await dbConnect()
                     const user = await User.findOne({ email })
 

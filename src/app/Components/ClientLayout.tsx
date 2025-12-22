@@ -13,7 +13,7 @@ export default function ClientLayout({
     const pathname = usePathname()
 
     // Define routes where global nav/footer should NOT appear
-    const isExcluded = pathname.startsWith("/admin") || pathname.startsWith("/api")
+    const isExcluded = pathname.startsWith("/admin") || pathname.startsWith("/api") || pathname.startsWith("/login")
 
     const navItems = [
         { name: 'Home', url: '/', icon: Home },
