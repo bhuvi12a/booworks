@@ -1,109 +1,112 @@
 "use client";
 
 // this is a client component
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { renderCanvas } from "./ui/canvas"
-import { DIcons } from "dicons";
 
 import { Button } from "./ui/button";
 import { BookingModal } from "./BookingModal";
 
+import { motion } from "framer-motion";
+import { CheckCircle2, TrendingUp, Users, ArrowRight } from "lucide-react";
+
 export function Hero() {
-    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-
-    useEffect(() => {
-        renderCanvas();
-
-        // Check for saved theme preference or default to 'dark'
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    }, []);
-
-    const toggleTheme = useCallback(() => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    }, [theme]);
-
     const [isBookingOpen, setIsBookingOpen] = useState(false);
 
+    const stats = [
+        { label: "Clients Served", value: "200+", icon: Users },
+        { label: "Revenue Generated", value: "$5M+", icon: TrendingUp },
+        { label: "Client Growth", value: "300%", icon: CheckCircle2 },
+    ];
+
     return (
-        <section id="home" className="relative">
+        <section id="home" className="relative overflow-hidden bg-transparent py-20 md:py-32">
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
 
-            {/* Theme Toggle Button */}
-            <div className="absolute right-4 top-4 z-50 md:right-8 md:top-8">
-                <button
-                    onClick={toggleTheme}
-                    className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-background/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-background hover:scale-110"
-                    aria-label="Toggle theme"
-                >
-                    {theme === 'dark' ? (
-                        <DIcons.Sun className="h-5 w-5 text-yellow-500 transition-transform duration-300 group-hover:rotate-180" />
-                    ) : (
-                        <DIcons.Moon className="h-5 w-5 text-blue-600 transition-transform duration-300 group-hover:-rotate-12" />
-                    )}
-                </button>
-            </div>
+            {/* Background Decoration (Matches Testimonials) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="animation-delay-8 animate-fadeIn mt-20 flex  flex-col items-center justify-center px-4 text-center md:mt-20">
+            <div className="container relative z-10 mx-auto px-6">
+                <div className="grid items-center gap-12 lg:grid-cols-2">
+                    {/* Left Content */}
+                    <div className="flex flex-col space-y-8 text-left">
+                        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-semibold text-primary">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+                            </span>
+                            #1 Digital Marketing Partner
+                        </div>
 
-                <div className="mb-10 mt-4  md:mt-6">
-                    <div className="px-2">
-                        <div className="border-ali relative mx-auto h-full max-w-7xl border p-6 [mask-image:radial-gradient(800rem_96rem_at_center,white,transparent)] md:px-12 md:py-20">
-                            <h1 className="flex  select-none flex-col  px-3 py-2 text-center text-5xl font-semibold leading-none tracking-tight md:flex-col md:text-8xl lg:flex-row lg:text-8xl">
-                                <DIcons.Plus
-                                    strokeWidth={4}
-                                    className="text-ali absolute -left-5 -top-5 h-10 w-10"
-                                />
-                                <DIcons.Plus
-                                    strokeWidth={4}
-                                    className="text-ali absolute -bottom-5 -left-5 h-10 w-10"
-                                />
-                                <DIcons.Plus
-                                    strokeWidth={4}
-                                    className="text-ali absolute -right-5 -top-5 h-10 w-10"
-                                />
-                                <DIcons.Plus
-                                    strokeWidth={4}
-                                    className="text-ali absolute -bottom-5 -right-5 h-10 w-10"
-                                />
-                                Your complete platform for Digital Marketing.
-                            </h1>
+                        <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-7xl">
+                            Scale <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Brands</span> with <br />
+                            <span className="text-primary italic">Precision Marketing</span>
+                        </h1>
+
+                        <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl font-medium">
+                            Elevating businesses through data-driven SEO, high-performance PPC, and strategic digital dominance.
+                        </p>
+
+                        <div className="flex flex-wrap gap-4">
+                            <Link href="/dashboard">
+                                <Button size="lg" className="rounded-full px-8 text-lg shadow-xl shadow-primary/20 transition-transform hover:scale-105">
+                                    Start Campaign <ArrowRight className="ml-2 h-5 w-5" />
+                                </Button>
+                            </Link>
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                onClick={() => setIsBookingOpen(true)}
+                                className="rounded-full px-8 text-lg backdrop-blur-sm transition-all hover:bg-primary/5"
+                            >
+                                Book a Strategy Call
+                            </Button>
+                        </div>
+
+                        {/* Stats Section */}
+                        <div className="grid grid-cols-1 gap-6 pt-8 sm:grid-cols-3">
+                            {stats.map((stat, i) => (
+                                <div key={i} className="group flex flex-col transition-transform hover:scale-105 cursor-default">
+                                    <div className="text-3xl font-bold text-foreground group-hover:text-primary transition-colors">{stat.value}</div>
+                                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    <h1 className="mt-8 text-2xl md:text-2xl">
-                        Scaling brands with precision. I'm{" "}
-                        <span className="text-ali font-bold">Bhuvanesh </span>
-                    </h1>
+                    {/* Right Content - Abstract Marketing Graphic */}
+                    <div className="relative hidden lg:block">
+                        <div className="relative mx-auto aspect-square w-full max-w-md">
+                            {/* Glassmorphism Cards Mockup */}
+                            <div className="absolute -left-4 top-10 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl">
+                                <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
+                                    <TrendingUp size={24} />
+                                </div>
+                                <div>
+                                    <div className="text-xs text-muted-foreground">ROI Target</div>
+                                    <div className="text-lg font-bold">450% Met</div>
+                                </div>
+                            </div>
 
-                    <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-6 text-sm text-primary/60 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
-                        Specializing in SEO, PPC, and performance marketing to turn traffic into revenue and drive real business ROI.
-                    </p>
-                    <div className="flex justify-center gap-2">
-                        <Link href={"/dashboard"}>
-                            <Button variant="default" size="lg">
-                                Start Campaign
-                            </Button>
-                        </Link>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            onClick={() => setIsBookingOpen(true)}
-                        >
-                            Book a Strategy Call
-                        </Button>
+                            <div className="absolute -right-4 bottom-20 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl">
+                                <div className="h-12 w-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-500">
+                                    <Users size={24} />
+                                </div>
+                                <div>
+                                    <div className="text-xs text-muted-foreground">Active Leads</div>
+                                    <div className="text-lg font-bold">12,450+</div>
+                                </div>
+                            </div>
+
+                            {/* Main Gradient Orb Graphic */}
+                            <div className="h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-blue-600/20 to-transparent blur-3xl" />
+                            <div className="absolute inset-10 rounded-full border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+                                <div className="h-full w-full rounded-full bg-gradient-to-tr from-primary to-blue-600 opacity-20" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <canvas
-                className="bg-skin-base pointer-events-none absolute inset-0 mx-auto"
-                id="canvas"
-            ></canvas>
         </section>
     );
 };

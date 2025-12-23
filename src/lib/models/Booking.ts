@@ -23,6 +23,9 @@ const BookingSchema = new mongoose.Schema({
         enum: ['pending', 'confirmed', 'cancelled'],
         default: 'pending',
     },
+    submissionTime: {
+        type: String, // Human readable real-time string
+    },
     createdAt: {
         type: Date,
         default: Date.now,

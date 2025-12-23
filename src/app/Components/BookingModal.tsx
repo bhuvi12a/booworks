@@ -169,7 +169,23 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                 <Clock size={18} className="text-primary" /> Select Time
                                             </h3>
                                             <div className="grid grid-cols-3 gap-2">
-                                                {TIME_SLOTS.map(time => (
+                                                {TIME_SLOTS.filter(time => {
+                                                    // If selecting today, filter out past slots
+                                                    if (isToday(selectedDate)) {
+                                                        const now = new Date();
+                                                        const [timeStr, modifier] = time.split(' ');
+                                                        let [hours, minutes] = timeStr.split(':').map(Number);
+                                                        if (modifier === 'PM' && hours < 12) hours += 12;
+                                                        if (modifier === 'AM' && hours === 12) hours = 0;
+
+                                                        const slotTime = new Date();
+                                                        slotTime.setHours(hours, minutes, 0, 0);
+
+                                                        // Require at least 5 mins lead time
+                                                        return slotTime.getTime() > (now.getTime() + 5 * 60000);
+                                                    }
+                                                    return true;
+                                                }).map(time => (
                                                     <button
                                                         key={time}
                                                         onClick={() => setSelectedTime(time)}
@@ -183,6 +199,20 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                                         {time}
                                                     </button>
                                                 ))}
+                                                {isToday(selectedDate) && TIME_SLOTS.every(time => {
+                                                    const now = new Date();
+                                                    const [timeStr, modifier] = time.split(' ');
+                                                    let [hours, minutes] = timeStr.split(':').map(Number);
+                                                    if (modifier === 'PM' && hours < 12) hours += 12;
+                                                    if (modifier === 'AM' && hours === 12) hours = 0;
+                                                    const slotTime = new Date();
+                                                    slotTime.setHours(hours, minutes, 0, 0);
+                                                    return slotTime.getTime() <= (now.getTime() + 5 * 60000);
+                                                }) && (
+                                                        <p className="col-span-3 text-[10px] text-red-500 italic mt-1">
+                                                            No more slots available for today. Please pick tomorrow!
+                                                        </p>
+                                                    )}
                                             </div>
                                         </div>
                                     )}
@@ -192,7 +222,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                 <div className="flex flex-col h-full">
                                     {selectedDate && selectedTime ? (
                                         <form action={action} className="space-y-4 animate-in slide-in-from-right-4 flex-1 flex flex-col justify-center">
-                                            <input type="hidden" name="date" value={selectedDate.toISOString()} />
+                                            <input type="hidden" name="date" value={selectedDate.toLocaleDateString('en-CA')} />
                                             <input type="hidden" name="time" value={selectedTime} />
 
                                             <div className="space-y-1">

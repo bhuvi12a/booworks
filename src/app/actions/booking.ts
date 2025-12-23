@@ -32,9 +32,25 @@ export async function bookCall(prevState: any, formData: FormData) {
             };
         }
 
+        // Parse date as YYYY-MM-DD and combine with selected time
+        const [year, month, day] = rawData.date.split('-').map(Number);
+        const [timeStr, modifier] = rawData.time.split(' ');
+        let [hours, minutes] = timeStr.split(':').map(Number);
+
+        if (modifier === 'PM' && hours < 12) hours += 12;
+        if (modifier === 'AM' && hours === 12) hours = 0;
+
+        // Use Date.UTC for appointment slots to keep them absolute and nominal
+        const bookingDate = new Date(Date.UTC(year, month - 1, day, hours, minutes));
+
         await Booking.create({
-            ...rawData,
-            date: new Date(rawData.date)
+            name: rawData.name,
+            email: rawData.email,
+            date: bookingDate,
+            time: rawData.time,
+            status: 'confirmed',
+            submissionTime: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), // Strong IST reference
+            createdAt: new Date()
         });
 
         revalidatePath("/admin/bookings");

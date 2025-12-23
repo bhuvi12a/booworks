@@ -17,16 +17,16 @@ export default function ClientLayout({
 
     const navItems = [
         { name: 'Home', url: '/', icon: Home },
-        { name: 'Services', url: '/#services', icon: Briefcase },
-        { name: 'About', url: '/#about', icon: User },
+        { name: 'Services', url: '/services', icon: Briefcase },
+        { name: 'About', url: '/about', icon: User },
         { name: 'Contact', url: '/contact', icon: Mail }
     ]
 
     return (
-        <>
+        <div className="bg-gradient-universe min-h-screen text-foreground">
             {!isExcluded && <Navbar items={navItems} />}
             {children}
             {!isExcluded && <Footer />}
-        </>
+        </div>
     )
 }

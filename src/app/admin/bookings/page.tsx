@@ -2,17 +2,22 @@ import { Trash2, Calendar, Clock, User, Mail } from "lucide-react"
 import dbConnect from "@/lib/db"
 import Booking from "@/lib/models/Booking"
 import { deleteBooking } from "@/app/actions/booking"
+import { FormattedDate } from "@/app/Components/ui/FormattedDate"
+import { LiveClock } from "@/app/Components/ui/LiveClock"
 
 export default async function BookingsPage() {
     await dbConnect()
-    const bookings = await Booking.find({}).sort({ date: 1, time: 1 }) // Sort by upcoming date
+    const bookings = await Booking.find({}).sort({ createdAt: -1 }) // Sort by newest leads first (real-time inbox)
 
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight">Strategy Calls</h1>
-                    <p className="text-muted-foreground mt-2">Manage upcoming strategy call appointments</p>
+                    <div className="flex items-center gap-3 text-muted-foreground mt-2">
+                        <p className="text-sm">Manage upcoming strategy call appointments</p>
+                        <LiveClock />
+                    </div>
                 </div>
                 <div className="bg-primary/10 text-primary px-4 py-2 rounded-lg font-mono font-bold">
                     Total: {bookings.length}
@@ -28,16 +33,17 @@ export default async function BookingsPage() {
                                 <th className="px-6 py-4">#</th>
                                 <th className="px-6 py-4">Client Name</th>
                                 <th className="px-6 py-4">Email</th>
-                                <th className="px-6 py-4">Date</th>
-                                <th className="px-6 py-4">Time</th>
+                                <th className="px-6 py-4">Appt. Date</th>
+                                <th className="px-6 py-4">Appt. Time</th>
                                 <th className="px-6 py-4">Status</th>
+                                <th className="px-6 py-4 text-nowrap">Submitted At (Your Time)</th>
                                 <th className="px-6 py-4 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-border">
                             {bookings.length === 0 ? (
                                 <tr>
-                                    <td colSpan={7} className="px-6 py-12 text-center text-muted-foreground">
+                                    <td colSpan={8} className="px-6 py-12 text-center text-muted-foreground">
                                         <div className="flex flex-col items-center gap-3">
                                             <div className="p-3 rounded-full bg-muted">
                                                 <Calendar size={24} />
@@ -53,7 +59,7 @@ export default async function BookingsPage() {
                                         <td className="px-6 py-4 font-medium text-foreground">{booking.name}</td>
                                         <td className="px-6 py-4 text-muted-foreground">{booking.email}</td>
                                         <td className="px-6 py-4 font-medium" suppressHydrationWarning>
-                                            {new Date(booking.date).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })}
+                                            <FormattedDate date={booking.date} mode="date" useUTC={true} />
                                         </td>
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-1.5 px-2 py-1 bg-blue-50 text-blue-700 w-fit rounded-md text-xs font-semibold">
@@ -67,6 +73,9 @@ export default async function BookingsPage() {
                                                 Confirmed
                                             </span>
                                         </td>
+                                        <td className="px-6 py-4 text-muted-foreground text-[10px] whitespace-nowrap">
+                                            <FormattedDate date={booking.createdAt} />
+                                        </td>
                                         <td className="px-6 py-4 text-right">
                                             <form action={async () => {
                                                 "use server"
@@ -76,7 +85,6 @@ export default async function BookingsPage() {
                                                     type="submit"
                                                     className="text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 p-2 rounded-lg transition-colors"
                                                     title="Cancel Booking"
-                                                // Note: Ideally add client-side confirmation here
                                                 >
                                                     <Trash2 size={16} />
                                                 </button>
@@ -118,13 +126,17 @@ export default async function BookingsPage() {
                                 <div className="bg-muted/30 p-2 rounded-lg">
                                     <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1"><Calendar size={12} /> Date</div>
                                     <div className="font-medium text-sm" suppressHydrationWarning>
-                                        {new Date(booking.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                                        <FormattedDate date={booking.date} mode="date" useUTC={true} />
                                     </div>
                                 </div>
                                 <div className="bg-muted/30 p-2 rounded-lg">
                                     <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1"><Clock size={12} /> Time</div>
                                     <div className="font-medium text-sm text-primary">{booking.time}</div>
                                 </div>
+                            </div>
+
+                            <div className="text-[10px] text-muted-foreground mb-4 px-1 italic">
+                                Submitted: <FormattedDate date={booking.createdAt} />
                             </div>
 
                             <form action={async () => {

@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { usePathname } from "next/navigation"
 
 interface NavItem {
     name: string
@@ -18,8 +19,13 @@ interface NavbarProps {
 }
 
 export function Navbar({ items, className }: NavbarProps) {
-    const [activeTab, setActiveTab] = useState(items[0].name)
+    const pathname = usePathname()
     const [isMobile, setIsMobile] = useState(false)
+
+    // Derived active tab based on current pathname
+    const activeTab = items.find(item =>
+        item.url === pathname || (item.url !== '/' && pathname.startsWith(item.url))
+    )?.name || items[0].name
 
     useEffect(() => {
         const handleResize = () => {
@@ -58,7 +64,6 @@ export function Navbar({ items, className }: NavbarProps) {
                         <Link
                             key={item.name}
                             href={item.url}
-                            onClick={() => setActiveTab(item.name)}
                             className={cn(
                                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                                 "text-foreground/80 hover:text-primary",
