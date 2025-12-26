@@ -4,6 +4,9 @@ import Newsletter from "@/lib/models/Newsletter"
 import { deleteSubscriber } from "@/app/actions/newsletter-actions"
 import { redirect } from "next/navigation"
 
+// Force dynamic rendering to avoid MongoDB connection during build
+export const dynamic = 'force-dynamic'
+
 export default async function NewsletterPage() {
     await dbConnect()
     const subscribers = await Newsletter.find({}).sort({ createdAt: -1 })

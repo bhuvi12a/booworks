@@ -5,6 +5,9 @@ import { deleteBooking } from "@/app/actions/booking"
 import { FormattedDate } from "@/app/Components/ui/FormattedDate"
 import { LiveClock } from "@/app/Components/ui/LiveClock"
 
+// Force dynamic rendering to avoid MongoDB connection during build
+export const dynamic = 'force-dynamic'
+
 export default async function BookingsPage() {
     await dbConnect()
     const bookings = await Booking.find({}).sort({ createdAt: -1 }) // Sort by newest leads first (real-time inbox)

@@ -43,21 +43,17 @@ export function Hero() {
                             <span className="text-primary italic">Precision Marketing</span>
                         </h1>
 
+
                         <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl font-medium">
                             Elevating businesses through data-driven SEO, high-performance PPC, and strategic digital dominance.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/dashboard">
-                                <Button size="lg" className="rounded-full px-8 text-lg shadow-xl shadow-primary/20 transition-transform hover:scale-105">
-                                    Start Campaign <ArrowRight className="ml-2 h-5 w-5" />
-                                </Button>
-                            </Link>
                             <Button
-                                variant="outline"
+                                variant="default"
                                 size="lg"
                                 onClick={() => setIsBookingOpen(true)}
-                                className="rounded-full px-8 text-lg backdrop-blur-sm transition-all hover:bg-primary/5"
+                                className="rounded-full px-8 text-lg shadow-xl shadow-primary/20 transition-transform hover:scale-105"
                             >
                                 Book a Strategy Call
                             </Button>

@@ -2,6 +2,9 @@ import dbConnect from "@/lib/db"
 import Contact from "@/lib/models/Contact"
 import InboxClient from "./InboxClient"
 
+// Force dynamic rendering to avoid MongoDB connection during build
+export const dynamic = 'force-dynamic'
+
 export default async function InboxPage() {
     await dbConnect()
     const enquiries = await Contact.find({}).sort({ createdAt: -1 }).lean()

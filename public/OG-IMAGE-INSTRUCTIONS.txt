@@ -1,0 +1,13 @@
+﻿<!-- 
+  TODO: Add Open Graph Image
+  
+  Create an image named 'og-image.jpg' in the /public folder with these specifications:
+  - Size: 1200x630 pixels
+  - Format: JPG or PNG
+  - Content: Your business branding with "Best Digital Marketing in Krishnagiri"
+  - Use tools like Canva, Figma, or Photoshop
+  
+  Alternatively, you can use online OG image generators:
+  - https://www.canva.com/create/og-images/
+  - https://www.figma.com/
+-->
