@@ -1,8 +1,58 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp } from "lucide-react"
-import { StackedWebsiteCards } from "./StackedWebsiteCards"
+import { Globe, Rocket, FileCode, Database, Briefcase, ShoppingBag, TrendingUp } from "lucide-react"
+
+const industries = [
+    {
+        icon: Globe,
+        name: "Website Development",
+        description: "Custom-built websites tailored to your business needs with modern design and functionality",
+        growth: "Full-Stack",
+        color: "text-blue-500",
+        bgColor: "bg-blue-500/10",
+    },
+    {
+        icon: Rocket,
+        name: "Landing Pages",
+        description: "High-converting landing pages optimized for campaigns and lead generation",
+        growth: "Conversion-Focused",
+        color: "text-purple-500",
+        bgColor: "bg-purple-500/10",
+    },
+    {
+        icon: FileCode,
+        name: "Static Websites",
+        description: "Fast, secure, and SEO-friendly static sites perfect for portfolios and business pages",
+        growth: "Lightning Fast",
+        color: "text-green-500",
+        bgColor: "bg-green-500/10",
+    },
+    {
+        icon: Database,
+        name: "Dynamic Websites",
+        description: "Interactive web applications with databases, user authentication, and real-time features",
+        growth: "Feature-Rich",
+        color: "text-orange-500",
+        bgColor: "bg-orange-500/10",
+    },
+    {
+        icon: Briefcase,
+        name: "Portfolio Sites",
+        description: "Stunning portfolio websites to showcase your work and attract clients",
+        growth: "Creative Design",
+        color: "text-pink-500",
+        bgColor: "bg-pink-500/10",
+    },
+    {
+        icon: ShoppingBag,
+        name: "E-Commerce Sites",
+        description: "Complete online stores with payment integration, inventory management, and analytics",
+        growth: "Sales-Ready",
+        color: "text-indigo-500",
+        bgColor: "bg-indigo-500/10",
+    },
+]
 
 const results = [
     { metric: "5M+", label: "Revenue Generated", icon: "💰" },
@@ -106,8 +156,45 @@ export function IndustriesAndResults() {
                         </motion.p>
                     </div>
 
-                    {/* Stacked Cards Display */}
-                    <StackedWebsiteCards />
+                    {/* Industries Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {industries.map((industry, index) => {
+                            const Icon = industry.icon
+                            return (
+                                <motion.div
+                                    key={industry.name}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
+                                >
+                                    {/* Icon */}
+                                    <div className={`w-12 h-12 rounded-2xl ${industry.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                                        <Icon className={`w-6 h-6 ${industry.color}`} />
+                                    </div>
+
+                                    {/* Content */}
+                                    <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
+                                        {industry.name}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                                        {industry.description}
+                                    </p>
+
+                                    {/* Growth Badge */}
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                                        <span className="text-xs font-semibold text-primary">
+                                            {industry.growth}
+                                        </span>
+                                    </div>
+
+                                    {/* Hover Gradient */}
+                                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                                </motion.div>
+                            )
+                        })}
+                    </div>
                 </div>
 
                 {/* Bottom CTA */}
