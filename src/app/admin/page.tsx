@@ -3,7 +3,7 @@
 import { Mail, FileText, Calendar, ShoppingBag, List, Eye, Package, ArrowRight, Wallet, Users } from "lucide-react"
 import Link from "next/link"
 
-// Stats Card Component
+// Stats Card Component - Frontend Style
 function StatCard({
     title,
     value,
@@ -18,21 +18,26 @@ function StatCard({
     bgClass: string
 }) {
     return (
-        <div className={`rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${bgClass} ${colorClass}`}>
-            <div className="flex justify-between items-start mb-4">
-                <h3 className="font-medium text-sm lg:text-base opacity-90">{title}</h3>
-                <div className={`p-2 rounded-lg bg-white/50 backdrop-blur-sm`}>
-                    <Icon size={20} />
+        <div className={`group relative rounded-3xl p-8 border border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 bg-white/60 dark:bg-card/60 backdrop-blur-xl overflow-hidden`}>
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+            <div className="relative z-10">
+                <div className="flex justify-between items-start mb-6">
+                    <h3 className="font-semibold text-base text-muted-foreground">{title}</h3>
+                    <div className={`p-3 rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 backdrop-blur-sm group-hover:scale-110 transition-transform`}>
+                        <Icon size={24} className="text-primary" />
+                    </div>
                 </div>
-            </div>
-            <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold">{value}</span>
+                <div className="flex items-baseline gap-2">
+                    <span className="text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">{value}</span>
+                </div>
             </div>
         </div>
     )
 }
 
-// Management Section Component
+// Management Section Component - Frontend Style
 function ManagementCard({
     title,
     description,
@@ -43,10 +48,10 @@ function ManagementCard({
     actions: { icon: any, label: string, subLabel: string, href: string, color: string }[]
 }) {
     return (
-        <div className="bg-white dark:bg-card rounded-2xl border border-border/50 shadow-sm p-6 lg:p-8 flex flex-col h-full">
-            <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
-                <p className="text-muted-foreground text-sm mt-1">{description}</p>
+        <div className="bg-white/60 dark:bg-card/60 backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg p-8 flex flex-col h-full hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+            <div className="mb-8">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">{title}</h3>
+                <p className="text-muted-foreground text-sm mt-2">{description}</p>
             </div>
 
             <div className="flex-1 space-y-4">
@@ -54,16 +59,17 @@ function ManagementCard({
                     <Link
                         key={i}
                         href={action.href}
-                        className={`group flex items-start gap-4 p-4 rounded-xl border border-border/50 hover:border-${action.color}-500/30 hover:bg-${action.color}-50/50 dark:hover:bg-${action.color}-950/10 transition-all duration-300`}
+                        className={`group flex items-start gap-4 p-5 rounded-2xl border border-white/20 hover:border-primary/30 bg-white/40 dark:bg-card/40 hover:bg-white/60 dark:hover:bg-card/60 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5`}
                     >
-                        <div className={`p-3 rounded-lg bg-${action.color}-100/50 dark:bg-${action.color}-900/20 text-${action.color}-600 dark:text-${action.color}-400 group-hover:scale-110 transition-transform`}>
+                        <div className={`p-3 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 text-primary group-hover:scale-110 transition-transform`}>
                             <action.icon size={22} />
                         </div>
                         <div className="flex-1">
-                            <h4 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors flex items-center gap-2">
+                            <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                                 {action.label}
+                                <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                             </h4>
-                            <p className="text-xs text-muted-foreground mt-0.5">{action.subLabel}</p>
+                            <p className="text-xs text-muted-foreground mt-1">{action.subLabel}</p>
                         </div>
                     </Link>
                 ))}
@@ -77,9 +83,9 @@ export default function AdminPage() {
         <div className="space-y-10 pb-10">
             {/* Welcome Section */}
             <div>
-                <h2 className="text-3xl font-bold text-gray-800 dark:text-white tracking-tight">Dashboard Overview</h2>
-                <p className="text-muted-foreground mt-2 text-lg">
-                    Welcome back, <span className="font-semibold text-foreground">Admin</span>! Here's what's happening today.
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text tracking-tight">Dashboard Overview</h2>
+                <p className="text-muted-foreground mt-3 text-lg">
+                    Welcome back, <span className="font-semibold text-primary">Admin</span>! Here's what's happening today.
                 </p>
             </div>
 
