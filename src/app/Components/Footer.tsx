@@ -162,6 +162,10 @@ export default function Footer() {
                                 <a href="mailto:bootech012@gmail.com" className="hover:text-primary transition-colors">bootech012@gmail.com</a>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                                <Phone size={16} className="text-primary" />
+                                <a href="tel:7397532847" className="hover:text-primary transition-colors">7397532847</a>
+                            </div>
+                            <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <MapPin size={16} className="text-primary" />
                                 <span> 4/72 Gandhi nagar , Hosur, Zuzuvadi, Krishnagiri District 635126</span>
                             </div>
