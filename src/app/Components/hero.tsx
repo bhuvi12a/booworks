@@ -35,7 +35,7 @@ export function Hero() {
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
                             </span>
-                            #1 Digital Marketing Partner
+                            #1 Digital Marketing Partner in Hosur & Krishnagiri
                         </div>
 
                         <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-7xl">
@@ -45,7 +45,7 @@ export function Hero() {
 
 
                         <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl font-medium">
-                            Elevating businesses through data-driven SEO, high-performance PPC, and strategic digital dominance.
+                            Elevating businesses in Hosur and Krishnagiri through data-driven SEO, high-performance PPC, and strategic digital dominance.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
