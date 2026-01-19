@@ -69,6 +69,11 @@ export const metadata: Metadata = {
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+    shortcut: '/logo.png',
+  },
 };
 
 import ClientLayout from "./Components/ClientLayout";
