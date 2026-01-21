@@ -3,7 +3,7 @@ import { generatePageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = generatePageMetadata({
     title: "Contact Us - Digital Marketing Agency in Hosur, Krishnagiri, Pennagaram, Dharmapuri",
-    description: "Get in touch with Booworks for digital marketing, SEO, website development, and social media services in Hosur, Krishnagiri, Pennagaram, and Dharmapuri. Call us at 7397532847 or email bootech012@gmail.com. Visit us at Gandhi Nagar, Hosur.",
+    description: "Get in touch with Booworks for digital marketing, SEO, website development, and social media services in Hosur, Krishnagiri, Pennagaram, and Dharmapuri. Call us at 7397532847 or email bootech07@gmail.com. Visit us at Gandhi Nagar, Hosur.",
     keywords: [
         "contact digital marketing agency hosur",
         "contact web development company krishnagiri",

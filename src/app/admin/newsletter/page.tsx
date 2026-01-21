@@ -15,19 +15,19 @@ export default async function NewsletterPage() {
         <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Newsletter Subscribers</h1>
-                    <p className="text-muted-foreground mt-2">Manage your email subscription list</p>
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent tracking-tight">Newsletter Subscribers</h1>
+                    <p className="text-gray-400 mt-2">Manage your email subscription list</p>
                 </div>
-                <div className="bg-primary/10 text-primary px-4 py-2 rounded-lg font-mono font-bold">
+                <div className="bg-orange-500/20 text-orange-500 border border-orange-500/30 px-4 py-2 rounded-lg font-mono font-bold">
                     Total: {subscribers.length}
                 </div>
             </div>
 
             {/* Desktop Table View */}
-            <div className="hidden md:block bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+            <div className="hidden md:block bg-gray-800/50 rounded-xl border border-gray-700 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left">
-                        <thead className="bg-muted/50 text-muted-foreground uppercase text-xs font-semibold">
+                        <thead className="bg-gray-900/50 text-gray-400 uppercase text-xs font-semibold">
                             <tr>
                                 <th className="px-6 py-4">#</th>
                                 <th className="px-6 py-4">Email Address</th>

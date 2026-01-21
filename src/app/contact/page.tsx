@@ -53,7 +53,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="font-semibold text-xl mb-1">Email Us</h3>
                                     <p className="text-muted-foreground mb-2">For general enquiries and support</p>
-                                    <a href="mailto:bootech012@gmail.com" className="text-primary font-medium hover:underline">bootech012@gmail.com</a>
+                                    <a href="mailto:bootech07@gmail.com" className="text-primary font-medium hover:underline">bootech07@gmail.com</a>
                                 </div>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
     name: 'Booworks',
     title: 'Best SEO Services & Digital Marketing Company in Hosur, Krishnagiri | Booworks',
     description: 'Leading SEO services, website development, and digital marketing company in Hosur, Krishnagiri, Pennagaram & Dharmapuri. Expert local SEO, web design, web development, and affordable Meta Ads & Google Ads services at your budget. Hire experienced website developers. Boost your online visibility with proven SEO strategies.',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://booworks.co',
     ogImage: '/og-image.jpg',
     keywords: [
         'best digital marketing in krishnagiri',
@@ -84,13 +84,13 @@ export const SITE_CONFIG = {
         country: 'India',
     },
     contact: {
-        email: 'info@booworks.com',
-        phone: '+91-XXXXXXXXXX', // Update with actual phone
+        email: 'bootech07@gmail.com',
+        phone: '+91-7397532847',
     },
     social: {
         twitter: '@booworks', // Update with actual handle
         facebook: 'https://facebook.com/booworks', // Update with actual URL
-        instagram: 'https://instagram.com/booworks', // Update with actual URL
+        instagram: 'https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==',
         linkedin: 'https://linkedin.com/company/booworks', // Update with actual URL
     },
 };

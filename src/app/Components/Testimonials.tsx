@@ -8,45 +8,66 @@ import { cn } from "@/lib/utils"
 const testimonials = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        role: "CMO at TechFlow",
-        content: "BooWorks transformed our digital presence completely. Their data-driven approach increased our leads by 200% in just 3 months. The team is incredibly professional and creative.",
-        avatar: "S"
+        name: "Anand Prabhu",
+        role: "Director at Sarvam Builders & Realtors",
+        content: "BooWorks transformed our digital marketing strategy completely. Their SEO services helped us reach the top of search results in Hosur, and our lead generation increased by 300%. Exceptional partnership!",
+        avatar: "A"
     },
     {
         id: 2,
-        name: "Michael Chen",
-        role: "Founder of StartUp X",
-        content: "The best digital marketing agency we've worked with. They truly understand modern branding and user acquisition. Our ROI has never been higher.",
-        avatar: "M"
+        name: "Rajan",
+        role: "Founder of Prime Craft Interiors",
+        content: "Outstanding creative work! The website they designed for us perfectly showcases our interior design portfolio. Our online inquiries tripled within two months. Highly professional team.",
+        avatar: "R"
     },
     {
         id: 3,
-        name: "Emma Davis",
-        role: "Director of Brand",
-        content: "Creativity meets Strategy. detailed reporting and transparent communication made the whole process smooth. Highly recommended for any serious business.",
-        avatar: "E"
+        name: "Raghul",
+        role: "CEO at Samuthra Arihanth Homes",
+        content: "The digital marketing campaigns BooWorks created for our real estate projects were phenomenal. Clear communication, data-driven strategies, and excellent ROI. They're true partners in our growth.",
+        avatar: "R"
     },
     {
         id: 4,
-        name: "James Wilson",
-        role: "CEO at GrowthInc",
-        content: "They didn't just run ads; they built a comprehensive funnel that captures and converts. The attention to detail in the creatives is unmatched.",
-        avatar: "J"
-    },
-    {
-        id: 5,
-        name: "Sofia Rodriguez",
-        role: "Marketing Head",
-        content: "Exceptional results and a pleasure to work with. They act more like a partner than a vendor. We've scaled our budget 5x with them profitably.",
+        name: "Sneha Patel",
+        role: "Owner of Empire Toyz",
+        content: "BooWorks helped us scale our toy business from local to regional through amazing social media marketing. Their Meta Ads campaigns delivered incredible results at very affordable rates!",
         avatar: "S"
     },
     {
+        id: 5,
+        name: "Nambi",
+        role: "Manager at Dumpling Monkey",
+        content: "Amazing results for our restaurant! Their local SEO and Google Ads services brought us tons of new customers. The team understands our business and delivers quality leads consistently.",
+        avatar: "N"
+    },
+    {
         id: 6,
-        name: "David Park",
-        role: "VP of Sales",
-        content: "The leads we get now are high quality. The synergy between their design and marketing teams really shows in the final output.",
-        avatar: "D"
+        name: "Viswanth",
+        role: "Director at Iconic Innovative Solutions",
+        content: "Professional web development and branding services. BooWorks created a modern, responsive website that perfectly represents our IT solutions company. Excellent attention to detail!",
+        avatar: "V"
+    },
+    {
+        id: 7,
+        name: "Selvam",
+        role: "Marketing Head at Cloud IT Solution",
+        content: "The best digital marketing agency in Hosur! Their comprehensive approach to SEO and content marketing has significantly boosted our online visibility. Results speak for themselves.",
+        avatar: "S"
+    },
+    {
+        id: 8,
+        name: "Anand",
+        role: "Founder of BTL Engineering",
+        content: "BooWorks delivered exceptional website development and digital marketing for our engineering firm. Their technical expertise and creative solutions exceeded our expectations. Highly recommended!",
+        avatar: "A"
+    },
+    {
+        id: 9,
+        name: "Arun Krishan",
+        role: "CEO at Fielduo",
+        content: "Outstanding digital marketing partnership! Their strategic approach to branding and online advertising has helped us establish a strong market presence. Professional, creative, and results-driven team.",
+        avatar: "A"
     }
 ]
 

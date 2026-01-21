@@ -26,10 +26,10 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
     return (
         <>
             {/* Desktop Table View */}
-            <div className="hidden lg:block bg-white dark:bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+            <div className="hidden lg:block bg-gray-800/50 rounded-xl border border-gray-700 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left">
-                        <thead className="bg-muted/50 text-muted-foreground uppercase text-xs font-semibold">
+                        <thead className="bg-gray-900/50 text-gray-400 uppercase text-xs font-semibold">
                             <tr>
                                 <th className="px-6 py-4">#</th>
                                 <th className="px-6 py-4">Name</th>
@@ -61,7 +61,7 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
                                         <td className="px-6 py-4 text-muted-foreground">{enquiry.email}</td>
                                         <td className="px-6 py-4 text-muted-foreground">{enquiry.phone || '-'}</td>
                                         <td className="px-6 py-4">
-                                            <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                                            <span className="inline-block px-2 py-1 bg-orange-500/20 text-orange-500 text-xs rounded-full border border-orange-500/30">
                                                 {enquiry.subject || 'General'}
                                             </span>
                                         </td>
@@ -76,14 +76,14 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
                                             <div className="flex items-center justify-end gap-2">
                                                 <button
                                                     onClick={() => setSelectedEnquiry(enquiry)}
-                                                    className="text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950/30 p-2 rounded-lg transition-colors"
+                                                    className="text-orange-500 hover:bg-orange-500/10 p-2 rounded-lg transition-colors"
                                                     title="View Full Message"
                                                 >
                                                     <Eye size={16} />
                                                 </button>
                                                 <button
                                                     onClick={() => handleDelete(enquiry._id)}
-                                                    className="text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 p-2 rounded-lg transition-colors"
+                                                    className="text-red-500 hover:bg-red-500/10 p-2 rounded-lg transition-colors"
                                                     title="Delete Enquiry"
                                                 >
                                                     <Trash2 size={16} />
@@ -127,7 +127,7 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
                                     </div>
                                 )}
                                 <div className="text-sm">
-                                    <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                                    <span className="inline-block px-2 py-1 bg-orange-500/20 text-orange-500 text-xs rounded-full border border-orange-500/30">
                                         {enquiry.subject || 'General'}
                                     </span>
                                 </div>
@@ -142,7 +142,7 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
                             <div className="flex gap-2 pt-3 border-t border-border">
                                 <button
                                     onClick={() => setSelectedEnquiry(enquiry)}
-                                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg transition-colors hover:bg-blue-100"
+                                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-orange-500/20 text-orange-500 border border-orange-500/30 rounded-lg transition-colors hover:bg-orange-500/30"
                                 >
                                     <Eye size={16} />
                                     <span className="text-sm font-medium">View</span>
@@ -163,7 +163,7 @@ export default function InboxClient({ enquiries }: { enquiries: Enquiry[] }) {
             {/* View Modal */}
             {selectedEnquiry && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setSelectedEnquiry(null)}>
-                    <div className="bg-white dark:bg-card rounded-2xl p-8 max-w-2xl w-full shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                    <div className="bg-gray-800 rounded-2xl p-8 max-w-2xl w-full shadow-2xl border border-gray-700" onClick={(e) => e.stopPropagation()}>
                         <div className="flex justify-between items-start mb-6">
                             <h2 className="text-2xl font-bold">Enquiry Details</h2>
                             <button

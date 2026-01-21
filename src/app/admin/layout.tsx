@@ -22,12 +22,12 @@ function Clock() {
     if (!date) return <div className="h-4 w-32 bg-white/10 animate-pulse rounded"></div>
 
     return (
-        <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
-            <Calendar size={16} className="text-primary" />
+        <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">
+            <Calendar size={16} className="text-orange-500" />
             <span>
                 {date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
             </span>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground/30 mx-1" />
+            <span className="w-1 h-1 rounded-full bg-gray-500 mx-1" />
             <span>{date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
         </div>
     )
@@ -50,89 +50,81 @@ export default function AdminLayout({
                 href={href}
                 onClick={() => setSidebarOpen(false)}
                 className={cn(
-                    "flex items-center gap-3 px-4 py-3 rounded-2xl font-medium transition-all duration-300 group relative overflow-hidden",
+                    "flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 group",
                     active
-                        ? "bg-gradient-to-r from-primary to-blue-600 text-white shadow-lg shadow-primary/30"
-                        : "text-muted-foreground hover:bg-white/50 dark:hover:bg-white/5 hover:text-foreground backdrop-blur-sm"
+                        ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/20"
+                        : "text-gray-400 hover:bg-gray-800 hover:text-white"
                 )}
             >
-                <Icon size={20} className={cn("transition-transform group-hover:scale-110", active && "drop-shadow-sm")} />
-                <span className="relative z-10">{label}</span>
-                {active && <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />}
+                <Icon size={20} className={cn("transition-transform group-hover:scale-110")} />
+                <span>{label}</span>
             </Link>
         )
     }
 
     return (
-        <div className="flex h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 dark:from-zinc-950 dark:via-blue-950/20 dark:to-indigo-950/30 font-sans relative overflow-hidden">
-            {/* Background Decoration - Frontend Style */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]" />
-            </div>
-
+        <div className="flex h-screen bg-gray-900">
             {/* Mobile Overlay */}
             {sidebarOpen && (
                 <div
-                    className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm"
+                    className="fixed inset-0 bg-black/60 z-40 md:hidden backdrop-blur-sm"
                     onClick={() => setSidebarOpen(false)}
                 />
             )}
 
-            {/* Sidebar - Frontend Style Glassmorphism */}
+            {/* Sidebar - Dark Theme */}
             <aside className={cn(
-                "fixed md:static inset-y-0 left-0 z-50 w-72 bg-white/80 dark:bg-card/80 backdrop-blur-xl border-r border-white/20 shadow-2xl transform transition-transform duration-300 ease-in-out md:translate-x-0 overflow-y-auto",
+                "fixed md:static inset-y-0 left-0 z-50 w-72 bg-gray-950 border-r border-gray-800 shadow-xl transform transition-transform duration-300 ease-in-out md:translate-x-0 overflow-y-auto",
                 sidebarOpen ? "translate-x-0" : "-translate-x-full"
             )}>
                 {/* Close button for mobile */}
                 <button
                     onClick={() => setSidebarOpen(false)}
-                    className="md:hidden absolute top-4 right-4 p-2 rounded-xl hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                    className="md:hidden absolute top-4 right-4 p-2 rounded-xl hover:bg-gray-800 transition-colors text-gray-400 hover:text-white"
                 >
                     <X size={20} />
                 </button>
 
-                <div className="p-6 border-b border-white/10">
+                {/* Logo Header */}
+                <div className="p-6 border-b border-gray-800">
                     <Link href="/admin" className="flex items-center gap-3">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-primary to-blue-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-primary/30">
+                        <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                             B
                         </div>
                         <div>
-                            <h1 className="font-bold text-xl leading-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">Admin Panel</h1>
-                            <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-semibold">Booworks Agency</p>
+                            <h1 className="font-bold text-xl text-white">BooWorks</h1>
+                            <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Admin Panel</p>
                         </div>
                     </Link>
                 </div>
 
-                <nav className="p-4 space-y-8">
-                    {/* Main */}
+                <nav className="p-4 space-y-6">
+                    {/* Dashboard */}
                     <div className="space-y-2">
                         <NavItem href="/admin" icon={Home} label="Dashboard" exact />
                     </div>
 
-                    {/* Management Groups */}
-                    <div className="space-y-3">
-                        <div className="px-4 text-[11px] font-bold text-muted-foreground/70 uppercase tracking-widest">
+                    {/* Enquiry Management */}
+                    <div className="space-y-2">
+                        <div className="px-4 text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">
                             Enquiry Management
                         </div>
-                        <div className="space-y-2">
-                            <NavItem href="/admin/inbox" icon={Mail} label="Contact Enquiry" />
-                            <NavItem href="/admin/newsletter" icon={FileText} label="Newsletter" />
-                            <NavItem href="/admin/bookings" icon={CalendarDays} label="Strategy Calls" />
-                        </div>
+                        <NavItem href="/admin/inbox" icon={Mail} label="Contact Enquiry" />
+                        <NavItem href="/admin/newsletter" icon={FileText} label="Newsletter" />
+                        <NavItem href="/admin/bookings" icon={CalendarDays} label="Strategy Calls" />
                     </div>
                 </nav>
             </aside>
 
             {/* Main Content Wrapper */}
-            <div className="flex-1 flex flex-col overflow-hidden relative">
+            <div className="flex-1 flex flex-col overflow-hidden">
 
-                {/* Top Header - Frontend Style */}
-                <header className="h-16 bg-white/80 dark:bg-card/80 backdrop-blur-xl border-b border-white/20 flex items-center justify-between px-4 md:px-8 shadow-sm z-10">
+                {/* Top Header */}
+                <header className="h-16 bg-gray-800 border-b border-gray-700 flex items-center justify-between px-4 md:px-8 shadow-sm">
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => setSidebarOpen(true)}
-                            className="md:hidden p-2 rounded-xl hover:bg-white/50 dark:hover:bg-white/10 text-muted-foreground transition-colors"
+                            className="md:hidden p-2 rounded-xl hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"
                         >
                             <Menu size={24} />
                         </button>
@@ -142,29 +134,29 @@ export default function AdminLayout({
                     </div>
 
                     <div className="flex items-center gap-3 md:gap-6">
-                        {/* Status Pills - Frontend Style */}
+                        {/* Status Pills */}
                         <div className="hidden lg:flex items-center gap-3 text-xs font-medium">
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green-500/10 text-green-600 rounded-full border border-green-500/20 backdrop-blur-sm">
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green-900/30 text-green-400 rounded-full border border-green-800">
                                 <Database size={12} />
                                 <span>Server: Online</span>
                             </div>
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green-500/10 text-green-600 rounded-full border border-green-500/20 backdrop-blur-sm">
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green-900/30 text-green-400 rounded-full border border-green-800">
                                 <CheckCircle size={12} />
                                 <span>DB: Connected</span>
                             </div>
                         </div>
 
-                        {/* Profile & Logout - Frontend Style */}
-                        <div className="flex items-center gap-3 border-l border-white/20 pl-6">
+                        {/* Profile & Logout */}
+                        <div className="flex items-center gap-3 border-l border-gray-700 pl-6">
                             <div className="flex items-center gap-2 pr-2">
-                                <div className="h-9 w-9 rounded-full bg-gradient-to-tr from-primary to-blue-600 flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-primary/20">
+                                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white font-bold text-xs shadow-md">
                                     AD
                                 </div>
-                                <span className="text-sm font-medium hidden sm:block">Admin</span>
+                                <span className="text-sm font-medium hidden sm:block text-gray-200">Admin</span>
                             </div>
                             <button
                                 onClick={() => signOut()}
-                                className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-600 border border-red-500/20 rounded-full hover:bg-red-500/20 transition-all text-sm font-medium backdrop-blur-sm"
+                                className="flex items-center gap-2 px-4 py-2 bg-red-900/30 text-red-400 border border-red-800 rounded-full hover:bg-red-900/50 transition-all text-sm font-medium"
                             >
                                 <LogOut size={16} />
                                 <span className="hidden sm:inline">Logout</span>
@@ -173,9 +165,9 @@ export default function AdminLayout({
                     </div>
                 </header>
 
-                {/* Dashboard Content - Frontend Style */}
-                <main className="flex-1 overflow-y-auto bg-transparent p-4 md:p-8 relative z-10">
-                    <div className="max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {/* Dashboard Content */}
+                <main className="flex-1 overflow-y-auto bg-gray-900 p-4 md:p-8">
+                    <div className="max-w-7xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
                         {children}
                     </div>
                 </main>

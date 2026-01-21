@@ -72,7 +72,7 @@ const footerLinks = {
 const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
 ]
 
@@ -159,7 +159,7 @@ export default function Footer() {
                         <div className="pt-4 space-y-3">
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Mail size={16} className="text-primary" />
-                                <a href="mailto:bootech012@gmail.com" className="hover:text-primary transition-colors">bootech012@gmail.com</a>
+                                <a href="mailto:bootech07@gmail.com" className="hover:text-primary transition-colors">bootech07@gmail.com</a>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Phone size={16} className="text-primary" />
@@ -183,11 +183,9 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <div className="flex items-center gap-1.5 opacity-70">
-                        <span>Made with</span>
-                        <Heart size={12} className="text-red-500 fill-red-500 animate-pulse" />
-                        <span>in 2024</span>
-                    </div>
+                    <a href="https://booworks.co" className="hover:text-primary transition-colors opacity-70 hover:opacity-100">
+                        booworks.co
+                    </a>
                 </div>
             </div>
         </footer>
