@@ -8,61 +8,21 @@ export const SITE_CONFIG = {
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://booworks.co',
     ogImage: '/og-image.jpg',
     keywords: [
-        'best digital marketing in krishnagiri',
-        'best digital marketing in hosur',
-        'website development company in krishnagiri',
-        'website development company in hosur',
-        'website development in hosur',
-        'best website development hosur',
-        'website developer hiring in hosur',
-        'hire web developer hosur',
-        'freelance web developer hosur',
-        'digital marketing agency krishnagiri',
-        'digital marketing agency hosur',
-        'SEO services krishnagiri',
-        'SEO services hosur',
-        'best seo services in hosur',
-        'seo company in hosur',
-        'seo agency in hosur',
-        'affordable seo services hosur',
-        'local seo services hosur',
-        'seo expert in hosur',
-        'seo consultant hosur',
-        'professional seo services hosur',
-        'top seo company hosur',
-        'hosur seo services',
-        'search engine optimization hosur',
-        'organic seo services hosur',
-        'seo services in pennagaram',
-        'seo services in dharmapuri',
-        'social media marketing krishnagiri',
-        'social media marketing hosur',
-        'web design krishnagiri',
-        'web design hosur',
-        'web development krishnagiri',
-        'web development hosur',
-        'website design company hosur',
-        'online marketing krishnagiri',
-        'online marketing hosur',
-        'digital marketing company tamil nadu',
-        'website development services',
-        'booworks digital marketing',
-        'branding agency hosur',
-        'branding agency krishnagiri',
-        'software company in hosur',
-        'software company in krishnagiri',
-        'mobile app development hosur',
-        'mobile app development krishnagiri',
-        'meta marketing in hosur',
-        'meta ads services hosur',
-        'affordable meta ads hosur',
-        'google ads in hosur',
-        'google ads services hosur',
-        'affordable google ads hosur',
-        'facebook ads hosur',
-        'instagram marketing hosur',
-        'cost effective advertising hosur',
-        'budget friendly digital marketing hosur',
+        'SEO Company Hosur',
+        'SEO Services Krishnagiri',
+        'Web Development Hosur',
+        'Website Development Krishnagiri',
+        'Digital Marketing Agency Hosur',
+        'Digital Marketing Krishnagiri',
+        'Local SEO Services Hosur',
+        'Affordable Meta Ads Hosur',
+        'Google Ads Services Hosur',
+        'Web Design Krishnagiri',
+        'SEO Expert Hosur',
+        'Website Developer Hosur',
+        'Social Media Marketing Hosur',
+        'Best SEO Company Tamil Nadu',
+        'Digital Marketing Dharmapuri',
     ],
     locations: [
         {
@@ -161,68 +121,57 @@ export function generatePageMetadata({
     };
 }
 
-// Organization Schema (JSON-LD)
-export const organizationSchema = {
+// Organization Schema (JSON-LD) - Removed to avoid duplication with LocalBusiness
+// Using LocalBusiness which is more specific than ProfessionalService
+
+// Enhanced Local Business Schema with Precise Geo Data and Service Areas
+export const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
+    '@type': 'LocalBusiness',
+    '@id': 'https://booworks.co/#localbusiness',
+    name: 'Booworks',
+    alternateName: 'BooWorks Digital Marketing',
+    description: 'Leading SEO services, website development, and digital marketing company in Hosur, Krishnagiri. Expert local SEO, web design, and affordable Meta Ads & Google Ads services.',
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/logo.png`,
     image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
-    telephone: SITE_CONFIG.contact.phone,
-    email: SITE_CONFIG.contact.email,
+    telephone: '+917397532847',
+    email: 'bootech07@gmail.com',
+    priceRange: '$$',
     address: {
         '@type': 'PostalAddress',
-        addressLocality: SITE_CONFIG.location.city,
-        addressRegion: SITE_CONFIG.location.state,
-        addressCountry: SITE_CONFIG.location.country,
+        streetAddress: 'Krishnagiri',
+        addressLocality: 'Krishnagiri',
+        addressRegion: 'Tamil Nadu',
+        postalCode: '635001',
+        addressCountry: 'IN',
     },
     geo: {
         '@type': 'GeoCoordinates',
-        latitude: '12.5266', // Krishnagiri coordinates
-        longitude: '78.2140',
+        latitude: 12.5266,
+        longitude: 78.2140,
     },
     areaServed: [
         {
             '@type': 'City',
-            name: 'Krishnagiri',
+            name: 'Hosur',
+            '@id': 'https://en.wikipedia.org/wiki/Hosur',
         },
         {
             '@type': 'City',
-            name: 'Hosur',
+            name: 'Krishnagiri',
+            '@id': 'https://en.wikipedia.org/wiki/Krishnagiri',
+        },
+        {
+            '@type': 'City',
+            name: 'Dharmapuri',
+            '@id': 'https://en.wikipedia.org/wiki/Dharmapuri',
+        },
+        {
+            '@type': 'City',
+            name: 'Pennagaram',
         },
     ],
-    sameAs: [
-        SITE_CONFIG.social.facebook,
-        SITE_CONFIG.social.twitter,
-        SITE_CONFIG.social.instagram,
-        SITE_CONFIG.social.linkedin,
-    ],
-    priceRange: '$$',
-};
-
-// Local Business Schema
-export const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': SITE_CONFIG.url,
-    name: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
-    url: SITE_CONFIG.url,
-    telephone: SITE_CONFIG.contact.phone,
-    email: SITE_CONFIG.contact.email,
-    address: {
-        '@type': 'PostalAddress',
-        addressLocality: SITE_CONFIG.location.city,
-        addressRegion: SITE_CONFIG.location.state,
-        addressCountry: SITE_CONFIG.location.country,
-    },
-    geo: {
-        '@type': 'GeoCoordinates',
-        latitude: '12.5266',
-        longitude: '78.2140',
-    },
     openingHoursSpecification: [
         {
             '@type': 'OpeningHoursSpecification',
@@ -232,27 +181,126 @@ export const localBusinessSchema = {
         },
     ],
     sameAs: [
-        SITE_CONFIG.social.facebook,
-        SITE_CONFIG.social.twitter,
-        SITE_CONFIG.social.instagram,
-        SITE_CONFIG.social.linkedin,
+        'https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==',
+        'https://facebook.com/booworks',
+        'https://linkedin.com/company/booworks',
     ],
+    hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Digital Marketing Services',
+        itemListElement: [
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'SEO Services',
+                    description: 'Professional SEO services in Hosur and Krishnagiri',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Website Development',
+                    description: 'Expert web development and design services',
+                },
+            },
+            {
+                '@type': 'Offer',
+                itemOffered: {
+                    '@type': 'Service',
+                    name: 'Digital Marketing',
+                    description: 'Affordable Meta Ads and Google Ads services',
+                },
+            },
+        ],
+    },
 };
 
-// Website Schema
+// Enhanced Website Schema with SearchAction for Sitelinks
 export const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: SITE_CONFIG.name,
+    '@id': 'https://booworks.co/#website',
+    name: 'Booworks',
+    alternateName: 'BooWorks Digital Marketing',
     url: SITE_CONFIG.url,
-    description: SITE_CONFIG.description,
+    description: 'Leading SEO and digital marketing company in Hosur, Krishnagiri',
+    inLanguage: 'en-IN',
     publisher: {
         '@type': 'Organization',
-        name: SITE_CONFIG.name,
+        '@id': 'https://booworks.co/#organization',
+        name: 'Booworks',
+        logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_CONFIG.url}/logo.png`,
+        },
     },
     potentialAction: {
         '@type': 'SearchAction',
-        target: `${SITE_CONFIG.url}/search?q={search_term_string}`,
+        target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${SITE_CONFIG.url}/search?q={search_term_string}`,
+        },
         'query-input': 'required name=search_term_string',
     },
 };
+
+// Site Navigation Element Schema for Google Sitelinks
+export const siteNavigationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://booworks.co/#sitenavigation',
+    name: 'Site Navigation',
+    itemListElement: [
+        {
+            '@type': 'SiteNavigationElement',
+            position: 1,
+            name: 'Home',
+            description: 'BooWorks Digital Marketing Homepage',
+            url: `${SITE_CONFIG.url}/`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 2,
+            name: 'Services',
+            description: 'Our Digital Marketing Services',
+            url: `${SITE_CONFIG.url}/services`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 3,
+            name: 'SEO Services',
+            description: 'Professional SEO Services in Hosur and Krishnagiri',
+            url: `${SITE_CONFIG.url}/services#seo`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 4,
+            name: 'Web Development',
+            description: 'Website Development and Design Services',
+            url: `${SITE_CONFIG.url}/services#web-development`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 5,
+            name: 'Contact',
+            description: 'Get in Touch with BooWorks',
+            url: `${SITE_CONFIG.url}/contact`,
+        },
+    ],
+};
+
+// Breadcrumb Schema Generator for Individual Pages
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+        })),
+    };
+}

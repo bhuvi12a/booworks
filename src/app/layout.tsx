@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import { SITE_CONFIG, organizationSchema, localBusinessSchema } from "@/lib/seo-config";
+import { SITE_CONFIG, localBusinessSchema, websiteSchema, siteNavigationSchema } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -29,6 +29,12 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  alternates: {
+    canonical: 'https://www.booworks.co',
+    types: {
+      'application/xml': 'https://www.booworks.co/sitemap.xml',
+    },
   },
   openGraph: {
     type: 'website',
@@ -69,6 +75,12 @@ export const metadata: Metadata = {
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
+  other: {
+    'ICBM': '12.5266, 78.2140',
+    'geo.position': '12.5266;78.2140',
+    'geo.placename': 'Krishnagiri, Tamil Nadu',
+    'geo.region': 'IN-TN',
+  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
@@ -98,17 +110,23 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD Structured Data - Google-Safe Schemas */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(websiteSchema),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteNavigationSchema),
           }}
         />
       </head>
