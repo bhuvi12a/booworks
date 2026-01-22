@@ -95,16 +95,16 @@ function ContactForm() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white/80 dark:bg-card/80 backdrop-blur-xl rounded-3xl p-6 md:p-8 lg:p-10 border border-border shadow-lg relative w-full"
+                        className="bg-card/90 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-border shadow-2xl relative w-full"
                     >
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold">Send an Enquiry</h3>
+                            <h3 className="text-2xl font-bold mb-2">Send an Enquiry</h3>
                             <p className="text-muted-foreground text-sm">Fill out the form below and we'll get back to you.</p>
                         </div>
 
                         {state?.success ? (
                             <div className="flex flex-col items-center justify-center py-20 text-center animate-in fade-in zoom-in duration-500">
-                                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                                <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6 text-green-600">
                                     <CheckCircle size={40} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-2">Enquiry Sent!</h3>
@@ -119,10 +119,12 @@ function ContactForm() {
                                 </button>
                             </div>
                         ) : (
-                            <form action={action} className="space-y-5">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <form action={action} className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-medium ml-1">Name <span className="text-red-500">*</span></label>
+                                        <label htmlFor="name" className="text-sm font-medium text-muted-foreground">
+                                            Name <span className="text-red-500">*</span>
+                                        </label>
                                         <div className="relative">
                                             <input
                                                 id="name"
@@ -130,13 +132,15 @@ function ContactForm() {
                                                 type="text"
                                                 required
                                                 placeholder="Your Name"
-                                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
                                             />
-                                            <User size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                            <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground/50" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-medium ml-1">Email <span className="text-red-500">*</span></label>
+                                        <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
+                                            Email <span className="text-red-500">*</span>
+                                        </label>
                                         <div className="relative">
                                             <input
                                                 id="email"
@@ -144,35 +148,35 @@ function ContactForm() {
                                                 type="email"
                                                 required
                                                 placeholder="john@example.com"
-                                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
                                             />
-                                            <Mail size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                            <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground/50" />
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="phone" className="text-sm font-medium ml-1">Phone</label>
+                                        <label htmlFor="phone" className="text-sm font-medium text-muted-foreground">Phone</label>
                                         <div className="relative">
                                             <input
                                                 id="phone"
                                                 name="phone"
                                                 type="tel"
                                                 placeholder="+91 99999 99999"
-                                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
                                             />
-                                            <Phone size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                            <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground/50" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="subject" className="text-sm font-medium ml-1">Subject</label>
+                                        <label htmlFor="subject" className="text-sm font-medium text-muted-foreground">Subject</label>
                                         <div className="relative">
                                             <select
                                                 id="subject"
                                                 name="subject"
                                                 defaultValue={jobParam ? "Job Application" : "General Enquiry"}
-                                                className="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm appearance-none"
+                                                className="w-full pl-4 pr-10 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all appearance-none"
                                             >
                                                 <option value="General Enquiry">General Enquiry</option>
                                                 <option value="Service Request">Service Request</option>
@@ -181,14 +185,16 @@ function ContactForm() {
                                                 <option value="Feedback">Feedback</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                                                <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                                <svg className="w-4 h-4 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium ml-1">Message <span className="text-red-500">*</span></label>
+                                    <label htmlFor="message" className="text-sm font-medium text-muted-foreground">
+                                        Message <span className="text-red-500">*</span>
+                                    </label>
                                     <div className="relative">
                                         <textarea
                                             id="message"
@@ -197,14 +203,14 @@ function ContactForm() {
                                             rows={5}
                                             defaultValue={jobParam ? `I am interested in applying for the ${jobParam} position.\n\n` : ''}
                                             placeholder={jobParam ? "Tell us about your experience and why you'd be a great fit..." : "Tell us about your project..."}
-                                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none shadow-sm"
+                                            className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all resize-none placeholder:text-muted-foreground/50"
                                         />
-                                        <MessageSquare size={18} className="absolute left-3 top-4 text-muted-foreground" />
+                                        <MessageSquare size={18} className="absolute left-4 top-4 text-muted-foreground/50" />
                                     </div>
                                 </div>
 
                                 {state?.success === false && (
-                                    <div className="p-3 rounded-lg bg-red-50 text-red-600 text-sm animate-in fade-in slide-in-from-top-2">
+                                    <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm animate-in fade-in slide-in-from-top-2">
                                         {state.message}
                                     </div>
                                 )}
@@ -212,7 +218,7 @@ function ContactForm() {
                                 <button
                                     type="submit"
                                     disabled={isPending}
-                                    className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:opacity-90 transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transform active:scale-[0.98]"
+                                    className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:opacity-90 transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isPending ? (
                                         <>
