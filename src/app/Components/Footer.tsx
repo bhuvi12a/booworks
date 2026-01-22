@@ -49,18 +49,18 @@ function NewsletterForm() {
 
 const footerLinks = {
     services: [
-        { name: "SEO Optimization", href: "#" },
-        { name: "Digital Marketing", href: "#" },
-        { name: "Content Strategy", href: "#" },
-        { name: "Social Media", href: "#" },
-        { name: "Web Designing", href: "#" },
+        { name: "SEO Optimization", href: "/services#seo" },
+        { name: "Digital Marketing", href: "/services#digital-marketing" },
+        { name: "Content Strategy", href: "/services#content" },
+        { name: "Social Media", href: "/services#social-media" },
+        { name: "Web Designing", href: "/services#web-development" },
     ],
     company: [
-        { name: "About Us", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Case Studies", href: "#" },
-        { name: "Blog", href: "#" },
-        { name: "Contact", href: "#" },
+        { name: "About Us", href: "/about" },
+        { name: "Careers", href: "/careers" },
+        { name: "Case Studies", href: "/#results" },
+        { name: "Blog", href: "/#blog" },
+        { name: "Contact", href: "/contact" },
     ],
     legal: [
         { name: "Privacy Policy", href: "#" },
@@ -175,7 +175,10 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} BooWorks Inc. All rights reserved.</p>
+                    <div className="flex flex-col items-center md:items-start gap-2">
+                        <p>© {new Date().getFullYear()} BooWorks Inc. All rights reserved.</p>
+                        <p className="text-xs">Founded by <span className="text-primary font-semibold">Bhuvanesh A</span>, CEO & Co-Founder</p>
+                    </div>
                     <div className="flex gap-6">
                         {footerLinks.legal.map((link) => (
                             <Link key={link.name} href={link.href} className="hover:text-primary transition-colors">
@@ -183,8 +186,8 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <a href="https://booworks.co" className="hover:text-primary transition-colors opacity-70 hover:opacity-100">
-                        booworks.co
+                    <a href="https://www.booworks.co" className="hover:text-primary transition-colors opacity-70 hover:opacity-100">
+                        www.booworks.co
                     </a>
                 </div>
             </div>

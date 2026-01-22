@@ -95,6 +95,50 @@ export default function AboutPage() {
                     </div>
                 </div>
 
+                {/* Leadership Section */}
+                <div className="mb-24">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-3xl md:text-4xl font-bold text-center mb-12"
+                    >
+                        Meet Our <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">Leadership</span>
+                    </motion.h2>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-2xl mx-auto"
+                    >
+                        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-blue-500/5 to-transparent border border-white/10 p-8 md:p-12">
+                            {/* Decorative Elements */}
+                            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
+                            <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none" />
+
+                            <div className="relative z-10 text-center">
+                                {/* Avatar/Initial */}
+                                <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center text-3xl font-bold text-white shadow-lg shadow-primary/20">
+                                    BA
+                                </div>
+
+                                {/* Name and Title */}
+                                <h3 className="text-2xl md:text-3xl font-bold mb-2">Bhuvanesh A</h3>
+                                <p className="text-primary font-semibold mb-4">CEO & Co-Founder</p>
+
+                                {/* Bio */}
+                                <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
+                                    Visionary leader driving digital transformation for businesses across Tamil Nadu.
+                                    With a passion for innovation and results-driven strategies, Bhuvanesh leads BooWorks
+                                    in delivering exceptional digital marketing solutions that empower brands to thrive in
+                                    the modern digital landscape.
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+
                 {/* Team / Culture Teaser */}
                 <div className="text-center">
                     <h2 className="text-2xl font-bold mb-6">Ready to Scale?</h2>

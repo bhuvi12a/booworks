@@ -18,6 +18,7 @@ export default function ClientLayout({
     const navItems = [
         { name: 'Home', url: '/', icon: Home },
         { name: 'Services', url: '/services', icon: Briefcase },
+        { name: 'AI Marketing', url: '/ai-marketing', icon: Briefcase },
         { name: 'About', url: '/about', icon: User },
         { name: 'Contact', url: '/contact', icon: Mail }
     ]

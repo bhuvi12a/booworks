@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [https://booworks.co](https://booworks.co) with your browser to see the result (or https://www.booworks.co for local development).
+Open [https://www.booworks.co](https://www.booworks.co) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

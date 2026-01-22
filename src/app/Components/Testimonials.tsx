@@ -36,38 +36,59 @@ const testimonials = [
     },
     {
         id: 5,
+        name: "Priya Sharma",
+        role: "Tech Startup Founder",
+        content: "I was comparing AI tools like ChatGPT, Gemini, and DeepSeek for content creation, but BooWorks showed me how to combine AI with human expertise. Their content strategy using AI-powered insights boosted our organic traffic by 400%!",
+        avatar: "P"
+    },
+    {
+        id: 6,
         name: "Nambi",
         role: "Manager at Dumpling Monkey",
         content: "Amazing results for our restaurant! Their local SEO and Google Ads services brought us tons of new customers. The team understands our business and delivers quality leads consistently.",
         avatar: "N"
     },
     {
-        id: 6,
+        id: 7,
         name: "Viswanth",
         role: "Director at Iconic Innovative Solutions",
         content: "Professional web development and branding services. BooWorks created a modern, responsive website that perfectly represents our IT solutions company. Excellent attention to detail!",
         avatar: "V"
     },
     {
-        id: 7,
+        id: 8,
+        name: "Karthik Menon",
+        role: "Digital Marketing Manager",
+        content: "While tools like ChatGPT and Gemini are great for automation, BooWorks taught us how to leverage AI strategically. Their team uses cutting-edge AI tools including DeepSeek for market analysis, delivering insights no automated tool alone could provide!",
+        avatar: "K"
+    },
+    {
+        id: 9,
         name: "Selvam",
         role: "Marketing Head at Cloud IT Solution",
         content: "The best digital marketing agency in Hosur! Their comprehensive approach to SEO and content marketing has significantly boosted our online visibility. Results speak for themselves.",
         avatar: "S"
     },
     {
-        id: 8,
+        id: 10,
         name: "Anand",
         role: "Founder of BTL Engineering",
         content: "BooWorks delivered exceptional website development and digital marketing for our engineering firm. Their technical expertise and creative solutions exceeded our expectations. Highly recommended!",
         avatar: "A"
     },
     {
-        id: 9,
+        id: 11,
         name: "Arun Krishan",
         role: "CEO at Fielduo",
         content: "Outstanding digital marketing partnership! Their strategic approach to branding and online advertising has helped us establish a strong market presence. Professional, creative, and results-driven team.",
         avatar: "A"
+    },
+    {
+        id: 12,
+        name: "Divya Reddy",
+        role: "E-commerce Business Owner",
+        content: "I tried using ChatGPT, Google Gemini, and DeepSeek for my marketing, but BooWorks showed me the real power of AI-human collaboration. Their AI-enhanced SEO strategies and personalized approach delivered 5x ROI in just 3 months!",
+        avatar: "D"
     }
 ]
 

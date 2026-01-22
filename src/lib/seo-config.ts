@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 export const SITE_CONFIG = {
     name: 'Booworks',
     title: 'Best SEO Services & Digital Marketing Company in Hosur, Krishnagiri | Booworks',
-    description: 'Leading SEO services, website development, and digital marketing company in Hosur, Krishnagiri, Pennagaram & Dharmapuri. Expert local SEO, web design, web development, and affordable Meta Ads & Google Ads services at your budget. Hire experienced website developers. Boost your online visibility with proven SEO strategies.',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://booworks.co',
+    description: 'Leading SEO services, website development, and AI-powered digital marketing company in Hosur, Krishnagiri, Pennagaram & Dharmapuri. Expert local SEO, web design, web development, and affordable Meta Ads & Google Ads services. Leverage AI tools like ChatGPT, Gemini, and DeepSeek for content strategy. Hire experienced website developers. Boost your online visibility with proven SEO strategies and AI marketing automation.',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.booworks.co',
     ogImage: '/og-image.jpg',
     keywords: [
         'SEO Company Hosur',
@@ -23,6 +23,14 @@ export const SITE_CONFIG = {
         'Social Media Marketing Hosur',
         'Best SEO Company Tamil Nadu',
         'Digital Marketing Dharmapuri',
+        'AI-Powered Digital Marketing',
+        'ChatGPT for Business Marketing',
+        'Gemini AI Marketing Tools',
+        'DeepSeek AI Content Strategy',
+        'AI Content Marketing Hosur',
+        'AI SEO Services',
+        'ChatGPT vs Gemini vs DeepSeek',
+        'AI Marketing Automation',
     ],
     locations: [
         {
@@ -46,6 +54,10 @@ export const SITE_CONFIG = {
     contact: {
         email: 'bootech07@gmail.com',
         phone: '+91-7397532847',
+    },
+    founder: {
+        name: 'Bhuvanesh A',
+        title: 'CEO & Co-Founder',
     },
     social: {
         twitter: '@booworks', // Update with actual handle
@@ -128,7 +140,7 @@ export function generatePageMetadata({
 export const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://booworks.co/#localbusiness',
+    '@id': 'https://www.booworks.co/#localbusiness',
     name: 'Booworks',
     alternateName: 'BooWorks Digital Marketing',
     description: 'Leading SEO services, website development, and digital marketing company in Hosur, Krishnagiri. Expert local SEO, web design, and affordable Meta Ads & Google Ads services.',
@@ -138,6 +150,11 @@ export const localBusinessSchema = {
     telephone: '+917397532847',
     email: 'bootech07@gmail.com',
     priceRange: '$$',
+    founder: {
+        '@type': 'Person',
+        name: 'Bhuvanesh A',
+        jobTitle: 'CEO & Co-Founder',
+    },
     address: {
         '@type': 'PostalAddress',
         streetAddress: 'Krishnagiri',
@@ -221,7 +238,7 @@ export const localBusinessSchema = {
 export const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://booworks.co/#website',
+    '@id': 'https://www.booworks.co/#website',
     name: 'Booworks',
     alternateName: 'BooWorks Digital Marketing',
     url: SITE_CONFIG.url,
@@ -229,7 +246,7 @@ export const websiteSchema = {
     inLanguage: 'en-IN',
     publisher: {
         '@type': 'Organization',
-        '@id': 'https://booworks.co/#organization',
+        '@id': 'https://www.booworks.co/#organization',
         name: 'Booworks',
         logo: {
             '@type': 'ImageObject',
@@ -250,7 +267,7 @@ export const websiteSchema = {
 export const siteNavigationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    '@id': 'https://booworks.co/#sitenavigation',
+    '@id': 'https://www.booworks.co/#sitenavigation',
     name: 'Site Navigation',
     itemListElement: [
         {
@@ -284,6 +301,20 @@ export const siteNavigationSchema = {
         {
             '@type': 'SiteNavigationElement',
             position: 5,
+            name: 'AI Marketing',
+            description: 'ChatGPT, Gemini & DeepSeek AI Marketing Services',
+            url: `${SITE_CONFIG.url}/ai-marketing`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 6,
+            name: 'Careers',
+            description: 'Join BooWorks - Sales & Graphic Designer Jobs in Hosur',
+            url: `${SITE_CONFIG.url}/careers`,
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 7,
             name: 'Contact',
             description: 'Get in Touch with BooWorks',
             url: `${SITE_CONFIG.url}/contact`,

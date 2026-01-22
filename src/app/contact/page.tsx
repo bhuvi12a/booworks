@@ -1,12 +1,15 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
 import { submitContact } from "@/app/actions/forms"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone, Send, Loader2, User, MessageSquare, CheckCircle } from "lucide-react"
 
-export default function ContactPage() {
+function ContactForm() {
     const [state, action, isPending] = useActionState(submitContact, undefined)
+    const searchParams = useSearchParams()
+    const jobParam = searchParams.get('job')
 
     return (
         <div className="min-h-screen bg-background relative overflow-hidden pt-24 pb-12">
@@ -168,11 +171,13 @@ export default function ContactPage() {
                                             <select
                                                 id="subject"
                                                 name="subject"
+                                                defaultValue={jobParam ? "Job Application" : "General Enquiry"}
                                                 className="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm appearance-none"
                                             >
                                                 <option value="General Enquiry">General Enquiry</option>
                                                 <option value="Service Request">Service Request</option>
                                                 <option value="Project Collaboration">Project Collaboration</option>
+                                                <option value="Job Application">Job Application</option>
                                                 <option value="Feedback">Feedback</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -190,7 +195,8 @@ export default function ContactPage() {
                                             name="message"
                                             required
                                             rows={5}
-                                            placeholder="Tell us about your project..."
+                                            defaultValue={jobParam ? `I am interested in applying for the ${jobParam} position.\n\n` : ''}
+                                            placeholder={jobParam ? "Tell us about your experience and why you'd be a great fit..." : "Tell us about your project..."}
                                             className="w-full pl-10 pr-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none shadow-sm"
                                         />
                                         <MessageSquare size={18} className="absolute left-3 top-4 text-muted-foreground" />
@@ -226,5 +232,20 @@ export default function ContactPage() {
                 </div>
             </div>
         </div>
+    )
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-background relative overflow-hidden pt-24 pb-12 flex items-center justify-center">
+                <div className="text-center">
+                    <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
+                    <p className="text-muted-foreground">Loading contact form...</p>
+                </div>
+            </div>
+        }>
+            <ContactForm />
+        </Suspense>
     )
 }

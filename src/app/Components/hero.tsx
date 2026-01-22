@@ -19,6 +19,38 @@ export function Hero() {
         { label: "Client Growth", value: "300%", icon: CheckCircle2 },
     ];
 
+    // Animated Number Component
+    function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
+        const [count, setCount] = useState(0);
+
+        useEffect(() => {
+            let startTime: number;
+            const duration = 2000; // 2 seconds
+            const startValue = 0;
+
+            const animate = (currentTime: number) => {
+                if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+
+                // Easing function for smooth animation
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                setCount(Math.floor(easeOutQuart * value));
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }, [value]);
+
+        return (
+            <div className="text-lg font-bold">
+                {count.toLocaleString()}{suffix}
+            </div>
+        );
+    }
+
     return (
         <section id="home" className="relative overflow-hidden bg-transparent py-20 md:py-32">
             <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
@@ -73,32 +105,99 @@ export function Hero() {
                     {/* Right Content - Abstract Marketing Graphic */}
                     <div className="relative hidden lg:block">
                         <div className="relative mx-auto aspect-square w-full max-w-md">
-                            {/* Glassmorphism Cards Mockup */}
-                            <div className="absolute -left-4 top-10 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl">
-                                <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
-                                    <TrendingUp size={24} />
+                            {/* Animated ROI Card */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, delay: 0.5 }}
+                                className="absolute -left-4 top-10 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl"
+                            >
+                                {/* Circular Progress */}
+                                <div className="relative h-16 w-16 flex-shrink-0">
+                                    {/* Background Circle */}
+                                    <svg className="h-full w-full -rotate-90 transform">
+                                        <circle
+                                            cx="32"
+                                            cy="32"
+                                            r="28"
+                                            stroke="currentColor"
+                                            strokeWidth="4"
+                                            fill="none"
+                                            className="text-primary/10"
+                                        />
+                                        {/* Animated Progress Circle */}
+                                        <motion.circle
+                                            cx="32"
+                                            cy="32"
+                                            r="28"
+                                            stroke="currentColor"
+                                            strokeWidth="4"
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            className="text-primary"
+                                            initial={{ strokeDasharray: "0 176" }}
+                                            animate={{ strokeDasharray: "158 176" }} // 90% of circle (450/500)
+                                            transition={{ duration: 2, delay: 0.8, ease: "easeOut" }}
+                                        />
+                                    </svg>
+                                    {/* Icon in center */}
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <motion.div
+                                            initial={{ scale: 0 }}
+                                            animate={{ scale: 1 }}
+                                            transition={{ duration: 0.5, delay: 1.2 }}
+                                        >
+                                            <TrendingUp size={20} className="text-primary" />
+                                        </motion.div>
+                                    </div>
                                 </div>
                                 <div>
                                     <div className="text-xs text-muted-foreground">ROI Target</div>
-                                    <div className="text-lg font-bold">450% Met</div>
+                                    <AnimatedNumber value={450} suffix="% Met" />
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="absolute -right-4 bottom-20 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl">
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, delay: 0.7 }}
+                                className="absolute -right-4 bottom-20 flex w-64 items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-2xl shadow-2xl"
+                            >
                                 <div className="h-12 w-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-500">
                                     <Users size={24} />
                                 </div>
                                 <div>
                                     <div className="text-xs text-muted-foreground">Active Leads</div>
-                                    <div className="text-lg font-bold">12,450+</div>
+                                    <AnimatedNumber value={12450} suffix="+" />
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            {/* Main Gradient Orb Graphic */}
+                            {/* Main Logo Graphic */}
                             <div className="h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-blue-600/20 to-transparent blur-3xl" />
-                            <div className="absolute inset-10 rounded-full border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-                                <div className="h-full w-full rounded-full bg-gradient-to-tr from-primary to-blue-600 opacity-20" />
-                            </div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.3 }}
+                                className="absolute inset-10 rounded-full border border-white/10 bg-white/5 p-8 backdrop-blur-sm flex items-center justify-center"
+                            >
+                                <motion.div
+                                    animate={{
+                                        rotate: [0, 5, -5, 0],
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                    className="relative w-full h-full flex items-center justify-center"
+                                >
+                                    <img
+                                        src="/bw-logo-dark.png"
+                                        alt="BooWorks Logo"
+                                        className="w-[90%] h-[90%] object-contain drop-shadow-2xl"
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
