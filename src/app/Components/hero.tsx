@@ -77,7 +77,7 @@ export function Hero() {
 
 
                         <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl font-medium">
-                            Elevating businesses in Hosur and Krishnagiri through data-driven SEO, high-performance PPC, and strategic digital dominance.
+                            Elevating businesses in Hosur and Krishnagiri through data-driven SEO, high-performance PPC, and strategic digital dominance. Best digital marketing & website development services with 450% ROI.
                         </p>
 
                         <div className="flex flex-wrap gap-4">

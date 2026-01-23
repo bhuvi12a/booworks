@@ -73,7 +73,7 @@ const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/booworks-co", label: "LinkedIn" },
 ]
 
 export default function Footer() {

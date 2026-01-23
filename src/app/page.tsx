@@ -5,7 +5,7 @@ import { Hero } from './Components/hero';
 import { WhyChooseUs } from './Components/WhyChooseUs';
 import { OurProcess } from './Components/OurProcess';
 import { IndustriesAndResults } from './Components/IndustriesAndResults';
-import { Clients } from './Components/Clients';
+import  Clients  from './Components/Clients';
 import { Testimonials } from './Components/Testimonials';
 import { Home as HomeIcon, Briefcase, User, Mail } from 'lucide-react';
 

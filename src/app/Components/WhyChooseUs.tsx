@@ -87,7 +87,7 @@ export function WhyChooseUs() {
                         transition={{ delay: 0.1 }}
                         className="text-muted-foreground text-lg leading-relaxed"
                     >
-                        We don't just run campaigns—we build revenue engines. Here's why businesses in Krishnagiri and Hosur trust us with their digital growth.
+                        We don't just run campaigns—we build revenue engines. As the best digital marketing and website development company in Hosur, Krishnagiri, we help businesses dominate their markets.
                     </motion.p>
                 </div>
 
