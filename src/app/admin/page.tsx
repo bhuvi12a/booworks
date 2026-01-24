@@ -1,7 +1,8 @@
-"use client"
-
 import { Mail, FileText, Calendar, ShoppingBag, List, Eye, Package, ArrowRight, Wallet, Users } from "lucide-react"
 import Link from "next/link"
+import dbConnect from "@/lib/db"
+import Contact from "@/lib/models/Contact"
+import Newsletter from "@/lib/models/Newsletter"
 
 // Stats Card Component - Orange Theme
 function StatCard({
@@ -74,7 +75,13 @@ function ManagementCard({
     )
 }
 
-export default function AdminPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function AdminPage() {
+    await dbConnect()
+    const contactCount = await Contact.countDocuments()
+    const newsletterCount = await Newsletter.countDocuments()
+
     return (
         <div className="space-y-10 pb-10">
             {/* Welcome Section */}
@@ -89,12 +96,12 @@ export default function AdminPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                 <StatCard
                     title="Contact Enquiries"
-                    value="4"
+                    value={contactCount}
                     icon={Mail}
                 />
                 <StatCard
                     title="Newsletter Subs"
-                    value="12"
+                    value={newsletterCount}
                     icon={FileText}
                 />
             </div>

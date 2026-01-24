@@ -32,8 +32,7 @@ export default function LoginPage() {
                             id="email"
                             type="email"
                             name="email"
-                            placeholder="admin@booworks.com"
-                            defaultValue="admin@booworks.com"
+                            placeholder="email@example.com"
                             required
                         />
                     </div>
@@ -45,7 +44,6 @@ export default function LoginPage() {
                             type="password"
                             name="password"
                             placeholder="••••••••"
-                            defaultValue="admin123"
                             required
                             minLength={6}
                         />
@@ -65,10 +63,7 @@ export default function LoginPage() {
                     )}
                 </form>
 
-                <div className="mt-6 text-center text-xs text-muted-foreground">
-                    <p>Demo Credentials:</p>
-                    <p>admin@booworks.com / admin123</p>
-                </div>
+
             </div>
         </div>
     )
