@@ -77,7 +77,7 @@ export const SITE_CONFIG = {
         country: 'India',
     },
     contact: {
-        email: 'bootech07@gmail.com',
+        email: 'bootech012@gmail.com',
         phone: '+91-7397532847',
     },
     founder: {
@@ -173,7 +173,7 @@ export const localBusinessSchema = {
     logo: `${SITE_CONFIG.url}/logo.png`,
     image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
     telephone: '+917397532847',
-    email: 'bootech07@gmail.com',
+    email: 'bootech012@gmail.com',
     priceRange: '$$',
     founder: {
         '@type': 'Person',

@@ -159,7 +159,7 @@ export default function Footer() {
                         <div className="pt-4 space-y-3">
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Mail size={16} className="text-primary" />
-                                <a href="mailto:bootech07@gmail.com" className="hover:text-primary transition-colors">bootech07@gmail.com</a>
+                                <a href="mailto:bootech012@gmail.com" className="hover:text-primary transition-colors">bootech012@gmail.com</a>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Phone size={16} className="text-primary" />
