@@ -1,12 +1,8 @@
-﻿# Robots.txt for Booworks - Digital Marketing Agency
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /login
+Disallow: /login/
 
 # Sitemap
 Sitemap: https://booworks.co/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1

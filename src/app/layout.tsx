@@ -80,6 +80,7 @@ export const metadata: Metadata = {
     'geo.position': '12.5266;78.2140',
     'geo.placename': 'Krishnagiri, Tamil Nadu',
     'geo.region': 'IN-TN',
+    'google-adsense-account': 'ca-pub-8943165950472927',
   },
   icons: {
     icon: '/logo.png',
