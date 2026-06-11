@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/seo-services-new-york`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/ai-marketing`,
             lastModified: currentDate,
             changeFrequency: 'weekly',
