@@ -297,7 +297,7 @@ export default function NewYorkLandingPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-lg">Call Us</h3>
-                                    <a href="tel:+12125550190" className="text-blue-600 hover:underline">+1 (212) 555-0190</a>
+                                    <a href="tel:+917397532847" className="text-blue-600 hover:underline">+91 7397532847</a>
                                 </div>
                             </div>
                         </div>
@@ -367,7 +367,7 @@ export default function NewYorkLandingPage() {
                                             id="phone"
                                             name="phone"
                                             type="tel"
-                                            placeholder="+1 (212) 555-0190"
+                                            placeholder="+91 7397532847"
                                             className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-background/50 border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
                                         />
                                         <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground/50" />
