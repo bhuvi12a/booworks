@@ -35,6 +35,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/seo-services-:location',
+        destination: '/seo-services/:location',
+      },
+    ];
+  },
 };
 
 export default nextConfig;

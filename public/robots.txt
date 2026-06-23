@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /login/
 
 # Sitemap
-Sitemap: https://booworks.co/sitemap.xml
+Sitemap: https://www.booworks.co/sitemap.xml
