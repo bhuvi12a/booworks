@@ -1,14 +1,15 @@
 "use client"
 
 import React, { useActionState, useState } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { 
     Search, BarChart, Megaphone, Target, Zap, TrendingUp, 
     Users, CheckCircle, Mail, Phone, Send, Loader2, User, 
-    MessageSquare, Star, Quote
+    MessageSquare, Star, Quote, MapPin
 } from "lucide-react"
 import { submitContact } from "@/app/actions/forms"
-import { LocationSEOData } from "@/lib/location-data"
+import { LocationSEOData, locationsData } from "@/lib/location-data"
 
 export default function LocationClientPage({ data }: { data: LocationSEOData }) {
     const [state, action, isPending] = useActionState(submitContact, undefined)
@@ -276,6 +277,36 @@ export default function LocationClientPage({ data }: { data: LocationSEOData }) 
                         </div>
                     </div>
                 )}
+
+                {/* Other Locations We Serve */}
+                <div className="mb-24">
+                    <div className="text-center max-w-3xl mx-auto mb-10">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-3">
+                            <MapPin size={13} /> Regional & Global Hubs
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                            Explore Other <span className="text-primary italic">Locations We Serve</span>
+                        </h2>
+                        <p className="text-muted-foreground text-sm md:text-base mt-2">
+                            Expanding businesses across major industrial powerhouses, commercial belts, and international markets.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
+                        {locationsData
+                            .filter((loc) => loc.slug !== data.slug)
+                            .map((loc) => (
+                                <Link
+                                    key={loc.slug}
+                                    href={`/seo-services-${loc.slug}`}
+                                    className="px-4 py-2 rounded-full bg-white/5 hover:bg-primary hover:text-primary-foreground border border-white/10 hover:border-primary text-xs md:text-sm font-medium transition-all duration-200 flex items-center gap-2 backdrop-blur-md group"
+                                >
+                                    <MapPin size={13} className="text-primary group-hover:text-primary-foreground transition-colors" />
+                                    <span>SEO in {loc.cityName}</span>
+                                </Link>
+                            ))}
+                    </div>
+                </div>
 
                 {/* Contact Section */}
                 <div id="contact" className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-16">

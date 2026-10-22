@@ -408,7 +408,19 @@ export const locationsData: LocationSEOData[] = [
         stateName: "Tamil Nadu",
         title: "Best SEO & Digital Marketing Service in Coimbatore - BooWorks",
         description: "Looking for the best SEO service or best digital marketing company in Coimbatore? ⭐ BooWorks is the #1 rated digital marketing agency. Expert Google Ads, Meta Ads & SEO services. Book a free strategy call!",
-        keywords: ["best seo service in coimbatore", "best digital marketing service in coimbatore", "seo company coimbatore", "digital marketing agency coimbatore", "seo agency coimbatore", "google ads service in coimbatore", "meta ads service in coimbatore", "web design company coimbatore", "website development coimbatore"],
+        keywords: [
+            "best seo service in coimbatore",
+            "best seo services in coimbatore",
+            "best digital marketing service in coimbatore",
+            "seo company coimbatore",
+            "digital marketing agency coimbatore",
+            "seo agency coimbatore",
+            "google ads service in coimbatore",
+            "meta ads service in coimbatore",
+            "web design company coimbatore",
+            "website development coimbatore",
+            "local seo coimbatore"
+        ],
         heroHeadline: "Top-Tier Digital Marketing in Coimbatore",
         heroSubheadline: "Scale your Coimbatore brand using data-driven campaigns. We build premium revenue engines through hyper-targeted Google Ads, Meta Ads, and state-of-the-art SEO services.",
         localContext: "Coimbatore is the engineering and pump capital of Tamil Nadu. We build B2B-optimized e-commerce sites and rank them globally for pump manufacturing, textile trade, and educational queries.",
@@ -422,7 +434,8 @@ export const locationsData: LocationSEOData[] = [
             { title: "Regional Google Search Ads", description: "Run highly efficient PPC ads to capture corporate and industrial buyers." }
         ],
         testimonials: [
-            { name: "Naveen Prasad", role: "Marketing Director at Kovai Pump Industries", content: "BooWorks set up our SEO and B2B PPC. Our corporate inquiries doubled in under 3 months.", avatar: "N" }
+            { name: "Naveen Prasad", role: "Marketing Director at Kovai Pump Industries", content: "BooWorks set up our SEO and B2B PPC. Our corporate inquiries doubled in under 3 months.", avatar: "N" },
+            { name: "Deepa Sundaram", role: "Founder of Kovai Naturals & Textiles", content: "Their digital marketing campaigns and SEO helped our Coimbatore textile brand reach buyers across South India. Fantastic ROI and support!", avatar: "D" }
         ]
     },
     {
@@ -488,6 +501,165 @@ export const locationsData: LocationSEOData[] = [
         testimonials: [
             { name: "Vijay Raghavan", role: "Managing Director at Salem Steel Fabricators", content: "BooWorks set up our B2B SEO and Google Ads. Our wholesale supply leads rose by 220% in three months. Very happy with the results!", avatar: "V" },
             { name: "Mythili S", role: "Founder of Kovai Handlooms Salem", content: "Their Meta Ads and custom Next.js store development brought us retail clients from Chennai and Bangalore. The best team for e-commerce!", avatar: "M" }
+        ]
+    },
+    {
+        slug: "dubai",
+        cityName: "Dubai",
+        stateName: "UAE",
+        title: "Best SEO & Digital Marketing Company in Dubai - BooWorks",
+        description: "Looking for the best SEO company in Dubai, UAE? ⭐ BooWorks delivers world-class digital marketing, local SEO, Google Ads & web development for UAE brands. Book a strategy call!",
+        keywords: [
+            "best seo service in dubai",
+            "best seo services in dubai",
+            "seo company dubai",
+            "seo agency dubai",
+            "digital marketing agency dubai",
+            "best digital marketing service in dubai",
+            "seo services dubai uae",
+            "website development company dubai",
+            "google ads agency dubai",
+            "meta ads agency dubai",
+            "real estate digital marketing dubai",
+            "ecommerce seo dubai",
+            "offshore seo company dubai",
+            "local seo dubai"
+        ],
+        heroHeadline: "Top-Tier SEO & Digital Marketing in Dubai",
+        heroSubheadline: "Scale your Dubai business, luxury enterprise, real estate firm, or e-commerce store with high-performance digital marketing. We engineer high-ROI Google Ads, Meta campaigns, and first-page SEO tailored for UAE and GCC markets.",
+        localContext: "Dubai is the vibrant business and financial capital of the Middle East, with fierce digital competition in real estate, hospitality, luxury retail, logistics, and tech ventures. Our performance-driven SEO architectures, bilingual intent modeling, and high-converting Next.js web applications empower businesses across Dubai and the UAE to dominate search results and acquire high-net-worth customers.",
+        stats: { served: "140+", revenue: "AED 12M+", roi: "460%" },
+        growthPlanTitle: "How We Drive Real Estate, E-Commerce & B2B Expansion in Dubai",
+        growthPlanDescription: "In Dubai's dynamic and competitive digital market, standard advertising burns budget without returns. We deploy high-intent search intent mapping, technical SEO audits, high-ROAS Google Search and Meta Ads campaigns, and ultra-fast Next.js digital platforms. Whether you're targeting overseas property investors or UAE shoppers, we convert high-intent clicks into premium closed deals.",
+        serviceSpecialties: [
+            { title: "Real Estate & Luxury Lead Gen", description: "Capture high-net-worth property buyers and luxury clients with hyper-targeted Google Search Ads and SEO funnels." },
+            { title: "B2B & Corporate SEO in UAE", description: "Dominate search rankings across Dubai, Abu Dhabi, and the GCC for corporate procurement, trading, and professional services." },
+            { title: "High-Converting Next.js Web Portals", description: "Ultra-fast, multilingual web platforms with frictionless UX, optimized for high conversion rates and Core Web Vitals." },
+            { title: "Google Ads & Performance PPC", description: "Maximize ROAS on high-competition Dubai keywords with automated bidding, negative keyword pruning, and targeted landing pages." }
+        ],
+        testimonials: [
+            { name: "Tariq Al-Mansoor", role: "Managing Partner at Gulf Capital Real Estate Dubai", content: "BooWorks revamped our SEO and Google Ads strategy. Our qualified investor inquiries increased by 310% in just 90 days. Exceptional digital partner in the UAE!", avatar: "T" },
+            { name: "Amina Al-Falasi", role: "Founder of Maison Luxe E-Commerce Dubai", content: "Their Next.js web development and e-commerce SEO took our online boutique from zero to page 1 rankings across Dubai and the Emirates.", avatar: "A" }
+        ]
+    },
+    {
+        slug: "erode",
+        cityName: "Erode",
+        stateName: "Tamil Nadu",
+        title: "Best SEO & Digital Marketing Service in Erode - BooWorks",
+        description: "Looking for the best SEO service or website development in Erode? ⭐ BooWorks is the #1 rated digital marketing agency. Expert Google Ads, Meta Ads & SEO in Erode. Book a free call!",
+        keywords: [
+            "best seo service in erode",
+            "best seo services in erode",
+            "best digital marketing service in erode",
+            "seo company erode",
+            "website development services in erode",
+            "digital marketing agency erode",
+            "web design company erode",
+            "seo agency erode",
+            "local seo erode",
+            "textile digital marketing erode",
+            "turmeric export digital marketing erode"
+        ],
+        heroHeadline: "Top-Tier Digital Marketing in Erode",
+        heroSubheadline: "Accelerate your Erode textile enterprise, turmeric export business, or local retail showroom with data-driven digital marketing. We build high-converting web portals and execute local & global SEO that delivers real ROI.",
+        localContext: "Known worldwide as the 'Turmeric City' (Manjal Managar) and a colossal textile hub for powerloom fabrics, bedsheets, and yarn processing, Erode is an industrial powerhouse. We help Erode manufacturers, agricultural exporters, and local retail stores capture high-value B2B purchase orders across India and international markets.",
+        stats: { served: "65+", revenue: "₹14Cr+", roi: "430%" },
+        growthPlanTitle: "How We Scale Erode's Textile & Turmeric Giants to National & Global Heights",
+        growthPlanDescription: "Erode's manufacturing backbone thrives on bulk wholesale orders. We construct B2B digital catalogs with direct Request-for-Quote (RFQ) workflows, optimize for high-intent export keywords, and deploy hyper-targeted Google Search and Meta Ads campaigns. This eliminates dependency on regional brokers and drives direct corporate procurement.",
+        serviceSpecialties: [
+            { title: "Textile & Apparel B2B SEO", description: "Rank for wholesale bed linen, fabric, and yarn queries to capture bulk orders from garment houses and retail chains." },
+            { title: "Turmeric & Agro-Export Marketing", description: "Connect agricultural exporters and processing mills directly with domestic and international spice buyers." },
+            { title: "Next.js Web Development", description: "Build lightning-fast catalog websites showcasing technical specs, fabric weaves, and instant WhatsApp inquiry modules." },
+            { title: "Google Maps & Local Dominance", description: "Boost foot traffic for Erode textile showrooms, hospitals, and educational institutions with local SEO." }
+        ],
+        testimonials: [
+            { name: "Ramesh Shanmugam", role: "Managing Director at Manjal Weaves Erode", content: "BooWorks developed our B2B textile portal and ranked us on page 1 for wholesale fabric supply. Our dealer inquiries increased by 240%!", avatar: "R" },
+            { name: "Karthikeyan P", role: "Owner of AgroSpices Erode Exporters", content: "Their SEO and Google Ads strategy helped us connect with international spice buyers directly without commission middlemen. Superb ROI!", avatar: "K" }
+        ]
+    },
+    {
+        slug: "trichy",
+        cityName: "Tiruchirappalli (Trichy)",
+        stateName: "Tamil Nadu",
+        title: "Best SEO & Digital Marketing Service in Tiruchirappalli (Trichy) - BooWorks",
+        description: "Looking for the best SEO service or website development in Tiruchirappalli (Trichy)? ⭐ BooWorks is the #1 digital marketing company. Google Ads, Meta Ads & SEO. Book a free call!",
+        keywords: [
+            "best seo service in tiruchirappalli",
+            "best seo service in trichy",
+            "best seo services in tiruchirappalli",
+            "best seo services in trichy",
+            "best digital marketing service in tiruchirappalli",
+            "best digital marketing service in trichy",
+            "seo company tiruchirappalli",
+            "seo company trichy",
+            "website development services in tiruchirappalli",
+            "website development services in trichy",
+            "digital marketing agency tiruchirappalli",
+            "digital marketing agency trichy",
+            "web design company tiruchirappalli",
+            "web design company trichy",
+            "seo agency tiruchirappalli",
+            "seo agency trichy",
+            "local seo tiruchirappalli",
+            "local seo trichy",
+            "seo services tiruchirappalli",
+            "digital marketing tiruchirappalli",
+            "seo company in thiruchirapalli"
+        ],
+        heroHeadline: "Top-Tier Digital Marketing in Tiruchirappalli (Trichy)",
+        heroSubheadline: "Empower your Tiruchirappalli (Trichy) engineering fabrication unit, educational institution, or healthcare center with result-oriented digital marketing. We deliver custom Next.js web applications, high-ranking SEO, and targeted PPC engines.",
+        localContext: "Tiruchirappalli (Trichy) is Central Tamil Nadu's industrial, fabrication, and educational capital, anchored by heavy engineering giants like BHEL, premier institutes like NIT and IIM, and growing IT parks. We help engineering suppliers, colleges, multi-specialty hospitals, and local retailers build dominant search presence and generate qualified inquiries.",
+        stats: { served: "75+", revenue: "₹16Cr+", roi: "440%" },
+        growthPlanTitle: "Engineering, Education & Healthcare Search Dominance in Tiruchirappalli (Trichy)",
+        growthPlanDescription: "Tiruchirappalli's diversified economy requires tailored digital funnels. For heavy fabrication and engineering units, we optimize for industrial procurement and tender-linked search queries. For educational academies and hospitals, we engineer local Google Maps supremacy and high-converting student/patient acquisition campaigns across Central Tamil Nadu.",
+        serviceSpecialties: [
+            { title: "Heavy Engineering & Fabrication SEO", description: "Rank for industrial fabrication, boiler components, and CNC machining supply keywords across India." },
+            { title: "Higher Education & Academy PPC", description: "Drive student admissions and course enrollments with laser-targeted Google Search & Meta campaigns." },
+            { title: "Healthcare & Clinic Local SEO", description: "Position multi-specialty hospitals and specialty clinics at the top of Google Maps for Tiruchirappalli (Trichy) and neighboring districts." },
+            { title: "Enterprise Web Engineering", description: "Build high-speed, secure web portals with Next.js featuring patient booking, admission forms, and quotation generators." }
+        ],
+        testimonials: [
+            { name: "Anandhakrishnan V", role: "CEO of Trichy Precision Engineering Works", content: "BooWorks' B2B industrial SEO brought us fabrication contracts from Chennai and Bangalore. Their understanding of technical keywords is unmatched.", avatar: "A" },
+            { name: "Dr. Revathi Soundararajan", role: "Director at Cauvery Health Centre Trichy", content: "Our patient appointments doubled after BooWorks optimized our local maps profile and ran targeted local search campaigns. Best digital agency in Tiruchirappalli (Trichy)!", avatar: "R" }
+        ]
+    },
+    {
+        slug: "tiruppur",
+        cityName: "Tiruppur",
+        stateName: "Tamil Nadu",
+        title: "Best SEO & Digital Marketing Service in Tiruppur - BooWorks",
+        description: "Looking for the best SEO service or website development in Tiruppur? ⭐ BooWorks is the #1 digital marketing agency for knitwear, garment export & apparel brands. Book a free call!",
+        keywords: [
+            "best seo service in tiruppur",
+            "best seo services in tiruppur",
+            "best digital marketing service in tiruppur",
+            "seo company tiruppur",
+            "website development services in tiruppur",
+            "digital marketing agency tiruppur",
+            "web design company tiruppur",
+            "seo agency tiruppur",
+            "garment export digital marketing tiruppur",
+            "knitwear seo tiruppur",
+            "local seo tirupur",
+            "seo services tirupur",
+            "digital marketing company tirupur"
+        ],
+        heroHeadline: "Top-Tier Digital Marketing in Tiruppur",
+        heroSubheadline: "Scale your Tiruppur knitwear factory, garment export house, or D2C apparel brand. We create high-converting e-commerce web stores and execute international SEO that drives high-volume overseas buyer contracts.",
+        localContext: "Celebrated as India's 'Knitwear Capital' and 'Dollar City', Tiruppur accounts for a huge portion of India's textile and apparel exports. We help Tiruppur garment manufacturers, spinning mills, fashion labels, and retail stores establish direct relationships with international retail chains, buying houses, and fashion shoppers.",
+        stats: { served: "90+", revenue: "₹20Cr+", roi: "450%" },
+        growthPlanTitle: "How We Scale Tiruppur Knitwear & Apparel Exporters Worldwide",
+        growthPlanDescription: "Tiruppur knitwear mills often rely on overseas buying agents with hefty cuts. We build world-class digital product showrooms, deploy international SEO targeting retail buyers across Europe, the US, and the Middle East, and run targeted B2B Google Search Ads to capture direct private-label manufacturing and bulk supply contracts.",
+        serviceSpecialties: [
+            { title: "Knitwear & Garment Export SEO", description: "Rank for 'private label clothing manufacturer', 'custom knitwear supplier', and bulk apparel queries globally." },
+            { title: "D2C Fashion E-commerce Stores", description: "Build high-speed Shopify and Next.js fashion stores with seamless checkout, automated inventory, and mobile-first design." },
+            { title: "Global B2B Google PPC", description: "Target apparel procurement managers and fashion brands across the US, UK, and Europe looking for OEM manufacturers." },
+            { title: "Meta Catalog & Influencer Ads", description: "Drive retail D2C garment sales with high-ROI dynamic product ads across Instagram and Facebook." }
+        ],
+        testimonials: [
+            { name: "Dhanasekar M", role: "Managing Partner at CottonCraft Exports Tiruppur", content: "BooWorks transformed our export business. We now receive direct inquiries from apparel brands in Europe and Dubai through organic Google rankings!", avatar: "D" },
+            { name: "Swetha Chandran", role: "Founder of UrbanKnit Apparel Tiruppur", content: "They built our D2C e-commerce website and scaled our Meta Ads to a 5.2x ROAS. The best digital marketing agency for clothing brands!", avatar: "S" }
         ]
     }
 ];

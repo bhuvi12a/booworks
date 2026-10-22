@@ -206,6 +206,46 @@ export const localBusinessSchema = {
         },
         {
             '@type': 'City',
+            name: 'Coimbatore',
+            '@id': 'https://en.wikipedia.org/wiki/Coimbatore',
+        },
+        {
+            '@type': 'City',
+            name: 'Tiruppur',
+            '@id': 'https://en.wikipedia.org/wiki/Tiruppur',
+        },
+        {
+            '@type': 'City',
+            name: 'Erode',
+            '@id': 'https://en.wikipedia.org/wiki/Erode',
+        },
+        {
+            '@type': 'City',
+            name: 'Tiruchirappalli',
+            '@id': 'https://en.wikipedia.org/wiki/Tiruchirappalli',
+        },
+        {
+            '@type': 'City',
+            name: 'Dubai',
+            '@id': 'https://en.wikipedia.org/wiki/Dubai',
+        },
+        {
+            '@type': 'City',
+            name: 'Bangalore',
+            '@id': 'https://en.wikipedia.org/wiki/Bangalore',
+        },
+        {
+            '@type': 'City',
+            name: 'Chennai',
+            '@id': 'https://en.wikipedia.org/wiki/Chennai',
+        },
+        {
+            '@type': 'City',
+            name: 'Salem',
+            '@id': 'https://en.wikipedia.org/wiki/Salem,_Tamil_Nadu',
+        },
+        {
+            '@type': 'City',
             name: 'Dharmapuri',
             '@id': 'https://en.wikipedia.org/wiki/Dharmapuri',
         },

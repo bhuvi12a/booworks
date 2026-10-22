@@ -39,6 +39,38 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: '/seo-services-tirupur',
+        destination: '/seo-services/tiruppur',
+      },
+      {
+        source: '/seo-services-thippur',
+        destination: '/seo-services/tiruppur',
+      },
+      {
+        source: '/seo-services-tiruchirappalli',
+        destination: '/seo-services/trichy',
+      },
+      {
+        source: '/seo-services-thiruchirapalli',
+        destination: '/seo-services/trichy',
+      },
+      {
+        source: '/seo-services-tiruchy',
+        destination: '/seo-services/trichy',
+      },
+      {
+        source: '/seo-services-thiruchy',
+        destination: '/seo-services/trichy',
+      },
+      {
+        source: '/seo-services-thircy',
+        destination: '/seo-services/trichy',
+      },
+      {
+        source: '/seo-services-coimabatore',
+        destination: '/seo-services/coimbatore',
+      },
+      {
         source: '/seo-services-:location',
         destination: '/seo-services/:location',
       },

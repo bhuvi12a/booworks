@@ -55,6 +55,17 @@ const footerLinks = {
         { name: "Social Media", href: "/services#social-media" },
         { name: "Web Designing", href: "/services#web-development" },
     ],
+    locations: [
+        { name: "Dubai (UAE)", href: "/seo-services-dubai" },
+        { name: "Coimbatore", href: "/seo-services-coimbatore" },
+        { name: "Erode", href: "/seo-services-erode" },
+        { name: "Tiruchirappalli (Trichy)", href: "/seo-services-trichy" },
+        { name: "Tiruppur", href: "/seo-services-tiruppur" },
+        { name: "Bangalore", href: "/seo-services-bangalore" },
+        { name: "Chennai", href: "/seo-services-chennai" },
+        { name: "Salem", href: "/seo-services-salem" },
+        { name: "Hosur", href: "/seo-services-hosur" },
+    ],
     company: [
         { name: "About Us", href: "/about" },
         { name: "Careers", href: "/careers" },
@@ -85,7 +96,7 @@ export default function Footer() {
             <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
                     {/* Brand Column */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tighter">
@@ -93,7 +104,7 @@ export default function Footer() {
                                 BooWorks
                             </span>
                         </Link>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-sm">
                             Elevating brands through data-driven digital marketing strategies and creative excellence.
                         </p>
                         <div className="flex gap-4">
@@ -121,7 +132,25 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group text-sm"
+                                    >
+                                        <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Locations SEO Links */}
+                    <div>
+                        <h3 className="font-semibold text-lg mb-6">Locations</h3>
+                        <ul className="space-y-2.5">
+                            {footerLinks.locations.map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group text-sm"
                                     >
                                         <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                                         {link.name}
@@ -138,7 +167,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group text-sm"
                                     >
                                         <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                                         {link.name}
