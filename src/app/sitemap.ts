@@ -20,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly' as const,
             priority: 0.95,
         },
+        // Offshore Services Hub
+        {
+            url: `${baseUrl}/offshore-services`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.95,
+        },
         // Core Offshore Practice Landing Pages
         {
             url: `${baseUrl}/offshore-digital-marketing-services`,
@@ -47,6 +54,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/offshore-ecommerce-development`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/offshore-google-ads-management`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/offshore-meta-ads-management`,
+            lastModified: currentDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/offshore-video-editing-services`,
             lastModified: currentDate,
             changeFrequency: 'weekly' as const,
             priority: 0.95,
