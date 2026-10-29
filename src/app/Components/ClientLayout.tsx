@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation"
 import { Navbar } from "./Navbar"
 import Footer from "./Footer"
-import { Home, Briefcase, User, Mail } from "lucide-react"
+import { Home, Briefcase, User, Mail, BookOpen } from "lucide-react"
 
 export default function ClientLayout({
     children,
@@ -19,6 +19,7 @@ export default function ClientLayout({
         { name: 'Home', url: '/', icon: Home },
         { name: 'Services', url: '/services', icon: Briefcase },
         { name: 'AI Marketing', url: '/ai-marketing', icon: Briefcase },
+        { name: 'Blog', url: '/blog', icon: BookOpen },
         { name: 'About', url: '/about', icon: User },
         { name: 'Contact', url: '/contact', icon: Mail }
     ]

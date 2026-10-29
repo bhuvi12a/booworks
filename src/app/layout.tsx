@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://www.booworks.co',
+    canonical: SITE_CONFIG.url,
     types: {
-      'application/xml': 'https://www.booworks.co/sitemap.xml',
+      'application/xml': `${SITE_CONFIG.url}/sitemap.xml`,
     },
   },
   openGraph: {
     type: 'website',
-    locale: 'en_IN',
+    locale: 'en_US',
     url: SITE_CONFIG.url,
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,

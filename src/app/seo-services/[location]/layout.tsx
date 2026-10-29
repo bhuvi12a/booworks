@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { locationsData } from "@/lib/location-data";
+import { SITE_CONFIG } from "@/lib/seo-config";
 import { notFound } from "next/navigation";
 
 interface LayoutProps {
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
         description: data.description,
         keywords: data.keywords,
         alternates: {
-            canonical: `https://www.booworks.co/seo-services-${location}`,
+            canonical: `${SITE_CONFIG.url}/seo-services-${location}`,
         },
     };
 }

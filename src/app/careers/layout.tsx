@@ -27,7 +27,7 @@ const jobPostings = [
         "title": "Sales Executive - Digital Marketing",
         "description": "Drive revenue growth by selling our digital marketing services to businesses across Hosur, Krishnagiri, and surrounding areas. Generate leads and close sales for SEO, web development, and digital marketing services.",
         "datePosted": "2026-01-22",
-        "validThrough": "2026-03-31",
+        "validThrough": "2027-03-31",
         "employmentType": "FULL_TIME",
         "hiringOrganization": {
             "@type": "Organization",
@@ -63,7 +63,7 @@ const jobPostings = [
         "title": "Graphic Designer",
         "description": "Create stunning visual content for our clients' digital marketing campaigns, websites, and social media platforms. Design graphics, brand identities, and marketing materials.",
         "datePosted": "2026-01-22",
-        "validThrough": "2026-03-31",
+        "validThrough": "2027-03-31",
         "employmentType": "FULL_TIME",
         "hiringOrganization": {
             "@type": "Organization",

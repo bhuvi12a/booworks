@@ -34,15 +34,15 @@ export default function LocationClientPage({ data }: { data: LocationSEOData }) 
         "name": `SEO & Digital Marketing Services in ${data.cityName}`,
         "provider": {
             "@type": "LocalBusiness",
-            "name": "Booworks",
-            "url": "https://www.booworks.co",
+            "name": "BooWorks",
+            "url": "https://booworks.co",
             "telephone": "+917397532847",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Krishnagiri",
-                "addressLocality": "Krishnagiri",
+                "streetAddress": "4/72 Gandhi nagar, Zuzuvadi",
+                "addressLocality": "Hosur",
                 "addressRegion": "Tamil Nadu",
-                "postalCode": "635001",
+                "postalCode": "635126",
                 "addressCountry": "IN"
             }
         },

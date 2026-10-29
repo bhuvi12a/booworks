@@ -36,40 +36,54 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  async rewrites() {
+  async redirects() {
     return [
+      // 301 Permanent Redirects for Common Typo & Legacy URLs
       {
         source: '/seo-services-tirupur',
-        destination: '/seo-services/tiruppur',
+        destination: '/seo-services-tiruppur',
+        permanent: true,
       },
       {
         source: '/seo-services-thippur',
-        destination: '/seo-services/tiruppur',
+        destination: '/seo-services-tiruppur',
+        permanent: true,
       },
       {
         source: '/seo-services-tiruchirappalli',
-        destination: '/seo-services/trichy',
+        destination: '/seo-services-trichy',
+        permanent: true,
       },
       {
         source: '/seo-services-thiruchirapalli',
-        destination: '/seo-services/trichy',
+        destination: '/seo-services-trichy',
+        permanent: true,
       },
       {
         source: '/seo-services-tiruchy',
-        destination: '/seo-services/trichy',
+        destination: '/seo-services-trichy',
+        permanent: true,
       },
       {
         source: '/seo-services-thiruchy',
-        destination: '/seo-services/trichy',
+        destination: '/seo-services-trichy',
+        permanent: true,
       },
       {
         source: '/seo-services-thircy',
-        destination: '/seo-services/trichy',
+        destination: '/seo-services-trichy',
+        permanent: true,
       },
       {
         source: '/seo-services-coimabatore',
-        destination: '/seo-services/coimbatore',
+        destination: '/seo-services-coimbatore',
+        permanent: true,
       },
+    ];
+  },
+
+  async rewrites() {
+    return [
       {
         source: '/seo-services-:location',
         destination: '/seo-services/:location',

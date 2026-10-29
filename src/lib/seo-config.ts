@@ -2,60 +2,50 @@ import { Metadata } from 'next';
 
 // Business Information
 export const SITE_CONFIG = {
-    name: 'Booworks',
-    title: 'Best SEO & Digital Marketing Company in Hosur | Best Website Development Hosur - Booworks',
-    description: 'Best Digital Marketing in Hosur ⭐ Leading SEO services & #1 Website Development in Hosur, Krishnagiri. Expert web design, affordable Meta Ads & Google Ads services. AI-powered marketing with ChatGPT & Gemini. Trusted by 200+ clients with 450% ROI. Book a free strategy call!',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.booworks.co',
+    name: 'BooWorks',
+    title: 'BooWorks | Offshore Digital Marketing, SEO & Web Development Agency',
+    description: 'BooWorks is a premier offshore digital marketing, SEO, and web development agency. We deliver dedicated remote teams, white-label SEO, and high-performance web engineering with reliable communication and transparent reporting.',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://booworks.co',
     ogImage: '/og-image.jpg',
     keywords: [
-        // PRIMARY TARGET KEYWORDS (High Priority for Ranking)
-        'Best Digital Marketing in Hosur',
-        'Best Website Development in Hosur',
-        'Best Digital Marketing Company Hosur',
-        'Best Web Development Company Hosur',
-        'Top Digital Marketing Agency Hosur',
-        'No 1 Website Development Hosur',
+        // OFFSHORE & INTERNATIONAL TARGET KEYWORDS
+        'offshore digital marketing services',
+        'offshore digital marketing company',
+        'offshore digital marketing agency',
+        'offshore digital marketing outsourcing',
+        'offshore seo services',
+        'offshore seo company',
+        'offshore seo agency',
+        'offshore seo outsourcing',
+        'offshore technical seo services',
+        'white label offshore seo services',
+        'offshore website development',
+        'offshore website development company',
+        'offshore web development services',
+        'offshore custom website development',
+        'offshore software development',
+        'offshore software development company',
+        'offshore full stack developers',
+        'offshore mobile app development',
+        'offshore ecommerce development company',
+        'offshore shopify development',
+        'offshore wordpress development',
+        'offshore ppc services',
+        'offshore google ads management',
+        'offshore social media marketing',
+        'offshore website maintenance services',
+        'offshore seo company in india',
+        'offshore digital marketing company in india',
+        'offshore web development company in india',
 
-        // SECONDARY KEYWORDS
-        'Digital Marketing Services Hosur',
-        'Website Development Services Hosur',
-        'SEO Company Hosur',
-        'Web Design Company Hosur',
-        'Professional Website Development Hosur',
-        'Digital Marketing Expert Hosur',
-        'Affordable Website Development Hosur',
-        'Best SEO Services Hosur',
-
-        // LOCATION-SPECIFIC KEYWORDS
-        'Digital Marketing Krishnagiri',
-        'Website Development Krishnagiri',
-        'SEO Services Krishnagiri',
-        'Web Development Pennagaram',
-        'Digital Marketing Dharmapuri',
-        'Local SEO Services Hosur',
-
-        // SERVICE-SPECIFIC KEYWORDS
-        'Affordable Meta Ads Hosur',
-        'Google Ads Services Hosur',
-        'Social Media Marketing Hosur',
-        'E-commerce Website Development Hosur',
-        'Custom Web Design Hosur',
-        'Responsive Website Development Hosur',
-        'Mobile App Development Hosur',
-
-        // AI & ADVANCED MARKETING
-        'AI-Powered Digital Marketing Hosur',
-        'ChatGPT for Business Marketing',
-        'Gemini AI Marketing Tools',
-        'AI Content Marketing Hosur',
-        'AI SEO Services',
-        'Marketing Automation Hosur',
-
-        // COMPETITIVE KEYWORDS
-        'Best SEO Company Tamil Nadu',
-        'Top Digital Marketing Agency Tamil Nadu',
-        'Website Developer Hosur',
-        'SEO Expert Hosur',
+        // REGIONAL & DOMESTIC KEYWORDS
+        'best seo company in hosur',
+        'digital marketing in hosur',
+        'digital marketing company in hosur',
+        'website development in hosur',
+        'seo services krishnagiri',
+        'digital marketing services bangalore',
+        'digital marketing services chennai',
     ],
     locations: [
         {
@@ -85,8 +75,8 @@ export const SITE_CONFIG = {
         title: 'CEO & Co-Founder',
     },
     social: {
-        twitter: '@booworks', // Update with actual handle
-        facebook: 'https://facebook.com/booworks', // Update with actual URL
+        twitter: '@booworks',
+        facebook: 'https://facebook.com/booworks',
         instagram: 'https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==',
         linkedin: 'https://www.linkedin.com/company/booworks-co',
     },
@@ -108,7 +98,7 @@ export function generatePageMetadata({
 }): Metadata {
     const url = `${SITE_CONFIG.url}${path}`;
     const image = ogImage || SITE_CONFIG.ogImage;
-    const fullTitle = title.includes('Booworks') ? title : `${title} | ${SITE_CONFIG.name}`;
+    const fullTitle = title.includes('BooWorks') || title.includes('Booworks') ? title : `${title} | ${SITE_CONFIG.name}`;
 
     return {
         title: fullTitle,
@@ -123,7 +113,7 @@ export function generatePageMetadata({
         },
         openGraph: {
             type: 'website',
-            locale: 'en_IN',
+            locale: 'en_US',
             url,
             title: fullTitle,
             description,
@@ -158,17 +148,14 @@ export function generatePageMetadata({
     };
 }
 
-// Organization Schema (JSON-LD) - Removed to avoid duplication with LocalBusiness
-// Using LocalBusiness which is more specific than ProfessionalService
-
 // Enhanced Local Business Schema with Precise Geo Data and Service Areas
 export const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://www.booworks.co/#localbusiness',
-    name: 'Booworks',
-    alternateName: 'Best Digital Marketing & Website Development Company in Hosur',
-    description: 'Best Digital Marketing in Hosur & Best Website Development in Hosur. #1 rated digital marketing company and web development agency serving Hosur, Krishnagiri. Expert SEO services, professional web design, affordable Meta Ads & Google Ads. Trusted by 200+ clients.',
+    '@id': `${SITE_CONFIG.url}/#localbusiness`,
+    name: 'BooWorks',
+    alternateName: 'BooWorks Offshore Digital & Web Development Agency',
+    description: 'International offshore digital marketing, SEO, and custom web development agency delivering remote teams and dedicated digital engineering from India.',
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/logo.png`,
     image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -182,84 +169,36 @@ export const localBusinessSchema = {
     },
     address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Krishnagiri',
-        addressLocality: 'Krishnagiri',
+        streetAddress: '4/72 Gandhi nagar, Zuzuvadi',
+        addressLocality: 'Hosur',
         addressRegion: 'Tamil Nadu',
-        postalCode: '635001',
+        postalCode: '635126',
         addressCountry: 'IN',
     },
     geo: {
         '@type': 'GeoCoordinates',
-        latitude: 12.5266,
-        longitude: 78.2140,
+        latitude: 12.7409,
+        longitude: 77.8253,
     },
     areaServed: [
-        {
-            '@type': 'City',
-            name: 'Hosur',
-            '@id': 'https://en.wikipedia.org/wiki/Hosur',
-        },
-        {
-            '@type': 'City',
-            name: 'Krishnagiri',
-            '@id': 'https://en.wikipedia.org/wiki/Krishnagiri',
-        },
-        {
-            '@type': 'City',
-            name: 'Coimbatore',
-            '@id': 'https://en.wikipedia.org/wiki/Coimbatore',
-        },
-        {
-            '@type': 'City',
-            name: 'Tiruppur',
-            '@id': 'https://en.wikipedia.org/wiki/Tiruppur',
-        },
-        {
-            '@type': 'City',
-            name: 'Erode',
-            '@id': 'https://en.wikipedia.org/wiki/Erode',
-        },
-        {
-            '@type': 'City',
-            name: 'Tiruchirappalli',
-            '@id': 'https://en.wikipedia.org/wiki/Tiruchirappalli',
-        },
-        {
-            '@type': 'City',
-            name: 'Dubai',
-            '@id': 'https://en.wikipedia.org/wiki/Dubai',
-        },
-        {
-            '@type': 'City',
-            name: 'Bangalore',
-            '@id': 'https://en.wikipedia.org/wiki/Bangalore',
-        },
-        {
-            '@type': 'City',
-            name: 'Chennai',
-            '@id': 'https://en.wikipedia.org/wiki/Chennai',
-        },
-        {
-            '@type': 'City',
-            name: 'Salem',
-            '@id': 'https://en.wikipedia.org/wiki/Salem,_Tamil_Nadu',
-        },
-        {
-            '@type': 'City',
-            name: 'Dharmapuri',
-            '@id': 'https://en.wikipedia.org/wiki/Dharmapuri',
-        },
-        {
-            '@type': 'City',
-            name: 'Pennagaram',
-        },
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'United Kingdom' },
+        { '@type': 'Country', name: 'Canada' },
+        { '@type': 'Country', name: 'Australia' },
+        { '@type': 'Country', name: 'United Arab Emirates' },
+        { '@type': 'Country', name: 'India' },
+        { '@type': 'City', name: 'Hosur' },
+        { '@type': 'City', name: 'Bangalore' },
+        { '@type': 'City', name: 'Chennai' },
+        { '@type': 'City', name: 'Coimbatore' },
+        { '@type': 'City', name: 'Dubai' },
     ],
     openingHoursSpecification: [
         {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
             opens: '09:00',
-            closes: '18:00',
+            closes: '19:00',
         },
     ],
     sameAs: [
@@ -267,80 +206,27 @@ export const localBusinessSchema = {
         'https://facebook.com/booworks',
         'https://www.linkedin.com/company/booworks-co',
     ],
-    hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Best Digital Marketing & Website Development Services in Hosur',
-        itemListElement: [
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Best Digital Marketing Services in Hosur',
-                    description: 'Top-rated digital marketing services in Hosur including SEO, Meta Ads, Google Ads, and social media marketing. Trusted by 200+ clients with proven 450% ROI.',
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Best Website Development Services in Hosur',
-                    description: 'Professional website development and web design services in Hosur. Custom, responsive, and SEO-optimized websites for businesses in Hosur, Krishnagiri, and Tamil Nadu.',
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'SEO Services Hosur',
-                    description: 'Expert local SEO and organic search optimization services in Hosur to rank #1 on Google. Increase website traffic and generate quality leads.',
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Web Design & Development',
-                    description: 'Affordable web design, e-commerce development, and custom website solutions in Hosur. Mobile-responsive and conversion-optimized designs.',
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Meta Ads & Google Ads Management',
-                    description: 'Cost-effective Meta (Facebook/Instagram) Ads and Google Ads campaign management in Hosur. Maximize ROI with data-driven PPC strategies.',
-                },
-            },
-        ],
-    },
 };
 
-// Enhanced Website Schema with SearchAction for Sitelinks
+// Compliant Website Schema (Without invalid search action)
 export const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://www.booworks.co/#website',
-    name: 'Booworks',
-    alternateName: 'BooWorks Digital Marketing',
+    '@id': `${SITE_CONFIG.url}/#website`,
+    name: 'BooWorks',
+    alternateName: 'BooWorks Offshore Digital Agency',
     url: SITE_CONFIG.url,
-    description: 'Leading SEO and digital marketing company in Hosur, Krishnagiri',
-    inLanguage: 'en-IN',
+    description: 'International offshore digital marketing, SEO, and web development agency.',
+    inLanguage: 'en',
     publisher: {
         '@type': 'Organization',
-        '@id': 'https://www.booworks.co/#organization',
-        name: 'Booworks',
+        '@id': `${SITE_CONFIG.url}/#organization`,
+        name: 'BooWorks',
+        url: SITE_CONFIG.url,
         logo: {
             '@type': 'ImageObject',
             url: `${SITE_CONFIG.url}/logo.png`,
         },
-    },
-    potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${SITE_CONFIG.url}/search?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
     },
 };
 
@@ -348,62 +234,62 @@ export const websiteSchema = {
 export const siteNavigationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    '@id': 'https://www.booworks.co/#sitenavigation',
+    '@id': `${SITE_CONFIG.url}/#sitenavigation`,
     name: 'Site Navigation',
     itemListElement: [
         {
             '@type': 'SiteNavigationElement',
             position: 1,
             name: 'Home',
-            description: 'BooWorks Digital Marketing Homepage',
+            description: 'BooWorks Homepage',
             url: `${SITE_CONFIG.url}/`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 2,
             name: 'Services',
-            description: 'Our Digital Marketing Services',
+            description: 'Offshore Digital Marketing & Web Services Hub',
             url: `${SITE_CONFIG.url}/services`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 3,
-            name: 'SEO Services',
-            description: 'Professional SEO Services in Hosur and Krishnagiri',
-            url: `${SITE_CONFIG.url}/services#seo`,
+            name: 'Offshore SEO Services',
+            description: 'Offshore SEO, Technical SEO & Link Building Services',
+            url: `${SITE_CONFIG.url}/offshore-seo-services`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 4,
-            name: 'Web Development',
-            description: 'Website Development and Design Services',
-            url: `${SITE_CONFIG.url}/services#web-development`,
+            name: 'Offshore Web Development',
+            description: 'Modern Next.js, React & Custom Web Engineering',
+            url: `${SITE_CONFIG.url}/offshore-web-development-services`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 5,
-            name: 'AI Marketing',
-            description: 'ChatGPT, Gemini & DeepSeek AI Marketing Services',
-            url: `${SITE_CONFIG.url}/ai-marketing`,
+            name: 'Offshore Digital Marketing',
+            description: 'Full-Funnel Offshore Digital Marketing Outsourcing',
+            url: `${SITE_CONFIG.url}/offshore-digital-marketing-services`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 6,
-            name: 'Careers',
-            description: 'Join BooWorks - Sales & Graphic Designer Jobs in Hosur',
-            url: `${SITE_CONFIG.url}/careers`,
+            name: 'About',
+            description: 'About BooWorks - Team, Vision & Delivery Center',
+            url: `${SITE_CONFIG.url}/about`,
         },
         {
             '@type': 'SiteNavigationElement',
             position: 7,
             name: 'Contact',
-            description: 'Get in Touch with BooWorks',
+            description: 'Book a Strategy Call or Request a Project Quote',
             url: `${SITE_CONFIG.url}/contact`,
         },
     ],
 };
 
-// Breadcrumb Schema Generator for Individual Pages
+// Breadcrumb Schema Generator
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
     return {
         '@context': 'https://schema.org',
@@ -412,7 +298,65 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
             '@type': 'ListItem',
             position: index + 1,
             name: item.name,
-            item: item.url,
+            item: item.url.startsWith('http') ? item.url : `${SITE_CONFIG.url}${item.url}`,
+        })),
+    };
+}
+
+// Service Schema Generator
+export function generateServiceSchema({
+    name,
+    description,
+    path,
+    serviceType,
+}: {
+    name: string;
+    description: string;
+    path: string;
+    serviceType: string;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_CONFIG.url}${path}#service`,
+        name,
+        serviceType,
+        description,
+        provider: {
+            '@type': 'Organization',
+            '@id': `${SITE_CONFIG.url}/#organization`,
+            name: SITE_CONFIG.name,
+            url: SITE_CONFIG.url,
+            telephone: SITE_CONFIG.contact.phone,
+            email: SITE_CONFIG.contact.email,
+        },
+        areaServed: [
+            { '@type': 'Country', name: 'United States' },
+            { '@type': 'Country', name: 'United Kingdom' },
+            { '@type': 'Country', name: 'Canada' },
+            { '@type': 'Country', name: 'Australia' },
+            { '@type': 'Country', name: 'United Arab Emirates' },
+            { '@type': 'Country', name: 'India' },
+        ],
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `${name} Offerings`,
+        },
+    };
+}
+
+// FAQPage Schema Generator
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
         })),
     };
 }

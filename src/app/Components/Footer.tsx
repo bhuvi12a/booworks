@@ -2,11 +2,9 @@
 
 import React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { useActionState } from "react"
-import { Facebook, Instagram, Linkedin, Twitter, Mail, MapPin, Phone, ArrowRight, Heart, Loader2, Check } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter, Mail, MapPin, Phone, ArrowRight, Loader2, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
-// import { useFormState } from "react-dom" // Use if useActionState not available
 import { subscribeToNewsletter } from "../actions/forms"
 
 function NewsletterForm() {
@@ -49,28 +47,33 @@ function NewsletterForm() {
 
 const footerLinks = {
     services: [
-        { name: "SEO Optimization", href: "/services#seo" },
-        { name: "Digital Marketing", href: "/services#digital-marketing" },
-        { name: "Content Strategy", href: "/services#content" },
-        { name: "Social Media", href: "/services#social-media" },
-        { name: "Web Designing", href: "/services#web-development" },
+        { name: "Offshore Digital Marketing", href: "/offshore-digital-marketing-services" },
+        { name: "Offshore SEO Services", href: "/offshore-seo-services" },
+        { name: "Offshore Web Development", href: "/offshore-web-development-services" },
+        { name: "Offshore Software Development", href: "/offshore-software-development" },
+        { name: "Ecommerce & Shopify", href: "/offshore-ecommerce-development" },
+        { name: "PPC & Google Ads", href: "/offshore-ppc-services" },
+        { name: "Social Media & Creative", href: "/offshore-social-media-marketing" },
+        { name: "Website Maintenance", href: "/offshore-website-maintenance-services" },
     ],
     locations: [
+        { name: "New York (USA)", href: "/seo-services-new-york" },
         { name: "Dubai (UAE)", href: "/seo-services-dubai" },
-        { name: "Coimbatore", href: "/seo-services-coimbatore" },
-        { name: "Erode", href: "/seo-services-erode" },
-        { name: "Tiruchirappalli (Trichy)", href: "/seo-services-trichy" },
-        { name: "Tiruppur", href: "/seo-services-tiruppur" },
         { name: "Bangalore", href: "/seo-services-bangalore" },
         { name: "Chennai", href: "/seo-services-chennai" },
-        { name: "Salem", href: "/seo-services-salem" },
+        { name: "Coimbatore", href: "/seo-services-coimbatore" },
         { name: "Hosur", href: "/seo-services-hosur" },
+        { name: "Tiruppur", href: "/seo-services-tiruppur" },
+        { name: "Salem", href: "/seo-services-salem" },
+        { name: "Tiruchirappalli (Trichy)", href: "/seo-services-trichy" },
+        { name: "Erode", href: "/seo-services-erode" },
     ],
     company: [
+        { name: "All Services Hub", href: "/services" },
         { name: "About Us", href: "/about" },
         { name: "Careers", href: "/careers" },
-        { name: "Case Studies", href: "/#results" },
-        { name: "Blog", href: "/#blog" },
+        { name: "AI Marketing", href: "/ai-marketing" },
+        { name: "Knowledge Hub (Blog)", href: "/blog" },
         { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -81,8 +84,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com/booworks", label: "Facebook" },
+    { icon: Twitter, href: "https://x.com/booworks", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/booworks.co?igsh=MWI5Ym8yZTFnMWtkdw==", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/booworks-co", label: "LinkedIn" },
 ]
@@ -105,7 +108,7 @@ export default function Footer() {
                             </span>
                         </Link>
                         <p className="text-muted-foreground leading-relaxed text-sm">
-                            Elevating brands through data-driven digital marketing strategies and creative excellence.
+                            Premier offshore digital marketing, SEO, and custom web development agency with delivery centers in India.
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => {
@@ -124,10 +127,10 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Offshore Services Links */}
                     <div>
-                        <h3 className="font-semibold text-lg mb-6">Services</h3>
-                        <ul className="space-y-4">
+                        <h3 className="font-semibold text-lg mb-6">Offshore Services</h3>
+                        <ul className="space-y-3">
                             {footerLinks.services.map((link) => (
                                 <li key={link.name}>
                                     <Link
@@ -142,9 +145,9 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Locations SEO Links */}
+                    {/* Locations & Delivery Hubs */}
                     <div>
-                        <h3 className="font-semibold text-lg mb-6">Locations</h3>
+                        <h3 className="font-semibold text-lg mb-6">Hubs & Locations</h3>
                         <ul className="space-y-2.5">
                             {footerLinks.locations.map((link) => (
                                 <li key={link.name}>
@@ -160,6 +163,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
+                    {/* Company Navigation */}
                     <div>
                         <h3 className="font-semibold text-lg mb-6">Company</h3>
                         <ul className="space-y-4">
@@ -181,7 +185,7 @@ export default function Footer() {
                     <div className="space-y-6">
                         <h3 className="font-semibold text-lg">Stay Updated</h3>
                         <p className="text-muted-foreground text-sm">
-                            Subscribe to our newsletter for the latest marketing trends and insights.
+                            Subscribe for offshore delivery insights, tech benchmarks, and growth strategies.
                         </p>
                         <NewsletterForm />
 
@@ -192,11 +196,11 @@ export default function Footer() {
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <Phone size={16} className="text-primary" />
-                                <a href="tel:7397532847" className="hover:text-primary transition-colors">7397532847</a>
+                                <a href="tel:7397532847" className="hover:text-primary transition-colors">+91 7397532847</a>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground text-sm">
                                 <MapPin size={16} className="text-primary" />
-                                <span> 4/72 Gandhi nagar , Hosur, Zuzuvadi, Krishnagiri District 635126</span>
+                                <span>4/72 Gandhi nagar, Hosur, Zuzuvadi, Krishnagiri District 635126, India</span>
                             </div>
                         </div>
                     </div>
@@ -204,8 +208,8 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex flex-col items-center md:items-start gap-2">
-                        <p>© {new Date().getFullYear()} BooWorks Inc. All rights reserved.</p>
+                    <div className="flex flex-col items-center md:items-start gap-1">
+                        <p>© {new Date().getFullYear()} BooWorks. All rights reserved.</p>
                         <p className="text-xs">Founded by <span className="text-primary font-semibold">Bhuvanesh A</span>, CEO & Co-Founder</p>
                     </div>
                     <div className="flex gap-6">
@@ -215,8 +219,8 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <a href="https://www.booworks.co" className="hover:text-primary transition-colors opacity-70 hover:opacity-100">
-                        www.booworks.co
+                    <a href="https://booworks.co" className="hover:text-primary transition-colors opacity-70 hover:opacity-100">
+                        booworks.co
                     </a>
                 </div>
             </div>
